@@ -1,0 +1,122 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Solar Energy Fundamentals",
+      "provider": "LinkedIn Learning",
+      "duration": "3h 45m",
+      "level": "Beginner",
+      "rating": 4.8,
+      "thumbnail": "/placeholder.svg?height=120&width=200",
+      "description": "Master the basics of solar energy systems, from photovoltaic principles to installation best practices.",
+      "skills": ["renewables", "engineering"],
+      "url": "https://linkedin.com/learning/solar-energy-fundamentals"
+    },
+    {
+      "id": 2,
+      "title": "Green Finance and ESG Investing",
+      "provider": "Octopus Energy Academy",
+      "duration": "2h 30m",
+      "level": "Intermediate",
+      "rating": 4.9,
+      "thumbnail": "/placeholder.svg?height=120&width=200",
+      "description": "Understand sustainable finance principles and ESG investment strategies in the energy transition.",
+      "skills": ["finance", "policy"],
+      "url": "https://octopus.energy/academy/green-finance"
+    },
+    {
+      "id": 3,
+      "title": "Climate Policy and Regulation",
+      "provider": "Future Learn",
+      "duration": "4h 15m",
+      "level": "Advanced",
+      "rating": 4.7,
+      "thumbnail": "/placeholder.svg?height=120&width=200",
+      "description": "Deep dive into climate legislation, carbon markets, and policy implementation strategies.",
+      "skills": ["policy", "leadership"],
+      "url": "https://futurelearn.com/climate-policy"
+    },
+    {
+      "id": 4,
+      "title": "Circular Economy Business Models",
+      "provider": "Coursera",
+      "duration": "5h 20m",
+      "level": "Intermediate",
+      "rating": 4.6,
+      "thumbnail": "/placeholder.svg?height=120&width=200",
+      "description": "Learn to design waste-free business models and implement circular economy principles.",
+      "skills": ["circular", "entrepreneurship"],
+      "url": "https://coursera.org/circular-economy"
+    },
+    {
+      "id": 5,
+      "title": "Energy Efficiency Auditing",
+      "provider": "Octopus Energy Academy",
+      "duration": "3h 10m",
+      "level": "Beginner",
+      "rating": 4.8,
+      "thumbnail": "/placeholder.svg?height=120&width=200",
+      "description": "Practical skills for conducting energy audits and recommending efficiency improvements.",
+      "skills": ["efficiency", "analysis"],
+      "url": "https://octopus.energy/academy/energy-auditing"
+    },
+    {
+      "id": 6,
+      "title": "Community Energy Project Management",
+      "provider": "LinkedIn Learning",
+      "duration": "4h 0m",
+      "level": "Intermediate",
+      "rating": 4.7,
+      "thumbnail": "/placeholder.svg?height=120&width=200",
+      "description": "Lead community-owned renewable energy projects from conception to operation.",
+      "skills": ["community", "management"],
+      "url": "https://linkedin.com/learning/community-energy"
+    },
+    {
+      "id": 7,
+      "title": "Carbon Accounting Masterclass",
+      "provider": "Octopus Energy Academy",
+      "duration": "6h 30m",
+      "level": "Advanced",
+      "rating": 4.9,
+      "thumbnail": "/placeholder.svg?height=120&width=200",
+      "description": "Comprehensive training on measuring, reporting, and reducing organizational carbon footprints.",
+      "skills": ["accounting", "analysis"],
+      "url": "https://octopus.energy/academy/carbon-accounting"
+    },
+    {
+      "id": 8,
+      "title": "Sustainable Supply Chain Management",
+      "provider": "edX",
+      "duration": "3h 45m",
+      "level": "Intermediate",
+      "rating": 4.5,
+      "thumbnail": "/placeholder.svg?height=120&width=200",
+      "description": "Optimize supply chains for environmental and social sustainability.",
+      "skills": ["operations", "sustainability"],
+      "url": "https://edx.org/sustainable-supply-chain"
+    }
+  ],
+  "webinars": [
+    {
+      "id": 1,
+      "title": "Real Time Climate: The Future of Green Jobs",
+      "presenter": "Octopus Energy",
+      "date": "2024-02-15",
+      "duration": "1h 0m",
+      "thumbnail": "/placeholder.svg?height=120&width=200",
+      "description": "Live discussion on emerging opportunities in the green economy with industry leaders.",
+      "recording_url": "https://octopus.energy/webinars/green-jobs-future"
+    },
+    {
+      "id": 2,
+      "title": "BCS Green Tech Career Pathways",
+      "presenter": "British Computer Society",
+      "date": "2024-01-28",
+      "duration": "45m",
+      "thumbnail": "/placeholder.svg?height=120&width=200",
+      "description": "Technology careers in sustainability and clean energy sectors.",
+      "recording_url": "https://bcs.org/webinars/green-tech-careers"
+    }
+  ]
+}

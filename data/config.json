@@ -1,0 +1,169 @@
+{
+  "skills": [
+    {
+      "key": "listening",
+      "label": "Listening",
+      "description": "Understanding others and taking in information"
+    },
+    {
+      "key": "speaking",
+      "label": "Speaking",
+      "description": "Communicating ideas clearly and confidently"
+    },
+    {
+      "key": "problemSolving",
+      "label": "Problem-Solving",
+      "description": "Finding creative solutions to challenges"
+    },
+    {
+      "key": "creativity",
+      "label": "Creativity",
+      "description": "Thinking outside the box and innovating"
+    },
+    {
+      "key": "teamwork",
+      "label": "Teamwork",
+      "description": "Collaborating effectively with others"
+    },
+    {
+      "key": "leadership",
+      "label": "Leadership",
+      "description": "Guiding and inspiring others"
+    },
+    {
+      "key": "stayingPositive",
+      "label": "Staying Positive",
+      "description": "Maintaining optimism in challenging situations"
+    },
+    {
+      "key": "aimingHigh",
+      "label": "Aiming High",
+      "description": "Setting ambitious goals and striving for excellence"
+    }
+  ],
+  "domains": [
+    {
+      "key": "renewables",
+      "label": "Renewable Energy",
+      "icon": "⚡",
+      "description": "Solar, wind, hydro power systems"
+    },
+    {
+      "key": "circular",
+      "label": "Circular Economy",
+      "icon": "♻️",
+      "description": "Waste reduction, recycling, reuse"
+    },
+    {
+      "key": "policy",
+      "label": "Climate Policy",
+      "icon": "🏛️",
+      "description": "Government, regulation, advocacy"
+    },
+    {
+      "key": "efficiency",
+      "label": "Energy Efficiency",
+      "icon": "🏠",
+      "description": "Building retrofits, smart systems"
+    },
+    {
+      "key": "finance",
+      "label": "Sustainable Finance",
+      "icon": "💰",
+      "description": "Green investments, ESG, carbon markets"
+    }
+  ],
+  "barriers": [
+    {
+      "key": "cost",
+      "label": "Cost",
+      "icon": "💰",
+      "tip": "Look for free online courses, government-funded training programs, and employer-sponsored learning opportunities. Many green skills can be developed through free resources."
+    },
+    {
+      "key": "time",
+      "label": "Time",
+      "icon": "⏰",
+      "tip": "Start with micro-learning - 15 minutes daily can build significant skills over time. Many courses offer flexible, self-paced learning that fits around your schedule."
+    },
+    {
+      "key": "childcare",
+      "label": "Childcare",
+      "icon": "👶",
+      "tip": "Look for training providers that offer childcare support, online learning options, or family-friendly scheduling. Some programs specifically support parents returning to work."
+    },
+    {
+      "key": "digital",
+      "label": "Digital Access",
+      "icon": "💻",
+      "tip": "Many libraries offer free computer and internet access. Some training programs provide equipment loans. Community centers often have digital inclusion programs."
+    },
+    {
+      "key": "language",
+      "label": "Language",
+      "icon": "🗣️",
+      "tip": "Look for training in your preferred language, or programs that offer language support alongside technical training. Many employers value multilingual skills in green careers."
+    }
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "title": "Effective Communication in Green Teams",
+      "duration": "2 hours",
+      "level": "Beginner",
+      "skills": ["listening", "speaking"]
+    },
+    {
+      "id": 2,
+      "title": "Creative Problem-Solving for Sustainability",
+      "duration": "3 hours",
+      "level": "Intermediate",
+      "skills": ["creativity", "problemSolving"]
+    },
+    {
+      "id": 3,
+      "title": "Leadership in Environmental Projects",
+      "duration": "4 hours",
+      "level": "Advanced",
+      "skills": ["leadership", "teamwork"]
+    }
+  ],
+  "mentors": [
+    {
+      "id": 1,
+      "name": "Sarah Chen",
+      "role": "Senior Solar Engineer",
+      "company": "Octopus Energy",
+      "expertise": ["renewables", "engineering"],
+      "background": "Former aerospace engineer who transitioned to renewable energy"
+    },
+    {
+      "id": 2,
+      "name": "Marcus Johnson",
+      "role": "Sustainability Finance Director",
+      "company": "Green Investment Partners",
+      "expertise": ["finance", "policy"],
+      "background": "Investment banker turned green finance specialist"
+    }
+  ],
+  "grants": [
+    {
+      "id": 1,
+      "title": "Green Skills Micro-Grant",
+      "amount": "£500",
+      "description": "For training courses and certifications in green skills",
+      "deadline": "2024-03-15",
+      "eligibility": "Under-represented groups in green careers"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "Green Careers Fair London",
+      "date": "2024-02-20",
+      "location": "ExCeL London",
+      "type": "Networking",
+      "description": "Meet employers and learn about opportunities"
+    }
+  ]
+}
