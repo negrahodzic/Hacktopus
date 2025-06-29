@@ -18,7 +18,7 @@ const greenRoles = [
     icon: <Zap className="w-6 h-6" />,
     title: "Solar Engineer",
     description: "Design, develop, and install solar energy systems for residential, commercial, and utility-scale projects",
-    whatItMeans: "You'll be at the forefront of the renewable energy revolution, creating clean power solutions that reduce carbon emissions and energy costs.",
+    whatItMeans: "Access Solar Engineer work by developing technical skills in system design and installation, then building experience through apprenticeships and green energy companies.",
     keySkills: ["Problem-Solving", "Creativity", "Aiming High"],
     averageSalary: "£35,000 - £65,000",
   },
@@ -26,7 +26,7 @@ const greenRoles = [
     icon: <Building2 className="w-6 h-6" />,
     title: "Sustainability Analyst",
     description: "Analyze environmental data and develop strategies to reduce organizational carbon footprint and improve sustainability performance",
-    whatItMeans: "You'll help companies become more environmentally responsible by measuring their impact and creating actionable improvement plans.",
+    whatItMeans: "Access Sustainability Analyst work by combining data analysis skills with environmental knowledge, then gaining experience through graduate programs and consultancy roles.",
     keySkills: ["Problem-Solving", "Speaking", "Listening"],
     averageSalary: "£28,000 - £55,000",
   },
@@ -34,7 +34,7 @@ const greenRoles = [
     icon: <Calculator className="w-6 h-6" />,
     title: "Carbon Accountant",
     description: "Measure, track, and report on greenhouse gas emissions to help organizations meet net-zero targets",
-    whatItMeans: "You'll be the numbers expert helping companies understand and reduce their climate impact through precise measurement and reporting.",
+    whatItMeans: "Access Carbon Accountant work by building accounting and environmental expertise, then specializing through carbon management certifications and finance sector experience.",
     keySkills: ["Problem-Solving", "Aiming High", "Listening"],
     averageSalary: "£32,000 - £58,000",
   },
@@ -42,7 +42,7 @@ const greenRoles = [
     icon: <Users className="w-6 h-6" />,
     title: "Community Energy Lead",
     description: "Develop and manage local renewable energy projects that benefit entire communities",
-    whatItMeans: "You'll empower communities to take control of their energy future, creating local jobs and reducing energy poverty.",
+    whatItMeans: "Access Community Energy Lead work by developing project management and community engagement skills, then building experience through local energy cooperatives and social enterprises.",
     keySkills: ["Leadership", "Speaking", "Teamwork"],
     averageSalary: "£30,000 - £50,000",
   },
@@ -50,7 +50,7 @@ const greenRoles = [
     icon: <Briefcase className="w-6 h-6" />,
     title: "Green Finance Advisor",
     description: "Structure and advise on funding for sustainable infrastructure, renewable energy, and climate adaptation projects",
-    whatItMeans: "You'll be the bridge between environmental goals and financial reality, making green projects economically viable.",
+    whatItMeans: "Access Green Finance Advisor work by combining financial expertise with sustainability knowledge, then gaining experience through green investment firms and sustainable banking.",
     keySkills: ["Speaking", "Aiming High", "Problem-Solving"],
     averageSalary: "£40,000 - £80,000",
   },
@@ -58,7 +58,7 @@ const greenRoles = [
     icon: <Leaf className="w-6 h-6" />,
     title: "Circular Economy Specialist",
     description: "Design and implement waste-free business models that keep resources in use for as long as possible",
-    whatItMeans: "You'll reimagine how we make and use things, creating systems where waste becomes input for something else.",
+    whatItMeans: "Access Circular Economy Specialist work by developing systems thinking and sustainability expertise, then gaining experience through waste management companies and circular design consultancies.",
     keySkills: ["Creativity", "Problem-Solving", "Teamwork"],
     averageSalary: "£33,000 - £60,000",
   },
@@ -130,13 +130,18 @@ export default function AccessOSPage() {
       <header className="bg-octopus-dark shadow-sm border-b border-octopus-darkLight">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-octopus-pink rounded-full flex items-center justify-center">
-                <Zap className="w-5 h-5 text-octopus-white" />
-              </div>
+                        <div className="flex items-center space-x-2">
+              <img 
+                src="/logo-octopus-energy.png" 
+                alt="Octopus Energy" 
+                className="h-8 w-auto"
+              />
               <span className="text-xl font-bold text-octopus-white">Octopus Energy</span>
             </div>
             <nav className="hidden md:flex space-x-8">
+              <a href="#" className="text-octopus-pink font-semibold">
+                Greenovate Hub
+              </a>
               <a href="#" className="text-octopus-white hover:text-octopus-pink">
                 About
               </a>
@@ -152,107 +157,252 @@ export default function AccessOSPage() {
       </header>
 
       {/* Hero Section */}
-      <section id="main-content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section id="main-content" className="bg-octopus-white py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-5xl font-bold text-octopus-dark mb-8">
-            Breaking Barriers to <span className="text-octopus-green">Green Careers</span>
+            Reimagining access to<br></br> <span className="text-octopus-green">Green Careers</span> & <span className="text-octopus-green">Climate Leadership</span>
           </h1>
-          <p className="text-lg text-octopus-black max-w-3xl mx-auto mb-12">
-            The green economy is booming. We're making it accessible with personalized pathways and mentorship.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-6 mb-12">
-            <Button
-              size="lg"
-              className="bg-octopus-pink hover:bg-octopus-darkLight text-octopus-white font-semibold px-8 py-4"
-              onClick={() => setIsModalOpen(true)}
-            >
-              Start Your Journey
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button
-              size="lg" 
-              variant="outline"
-              className="border-2 border-octopus-dark text-octopus-white bg-octopus-dark hover:bg-octopus-pink hover:border-octopus-pink font-semibold px-8 py-4"
-              onClick={() => document.getElementById('problem-section')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              See How It Works
-            </Button>
+          <div className="mx-auto max-w-3xl text-center mb-12">
+            <p className="text-lg text-octopus-black mb-4">
+              Imagine a world where every passionate changemaker - no matter their background - can launch a green career.
+            </p>
+            <p className="text-lg text-octopus-black">
+              Greenovate Hub breaks down the barriers that have kept under-represented communities on the sidelines of sustainability and energy.
+            </p>
+          </div>
+          <div className="mb-2">
+          <img
+            src="/team-octopus-energy.png"
+            alt="Diverse group of young professionals at Octopus Energy"
+            className="mx-auto rounded-full shadow-soft-xl max-w-[200px] w-full h-auto"
+          />
           </div>
         </div>
-        <div className="mt-12 mb-8">
-          <img
-            src="/team-octopus-energy.jpg"
-            alt="Diverse group of young professionals at Octopus Energy"
-            className="mx-auto rounded-xl shadow-soft-xl max-w-5xl w-full h-auto"
-          />
         </div>
       </section>
 
       {/* Problem Statement */}
-      <section id="problem-section" className="bg-octopus-darkLight py-20">
+      <section id="story-problem" className="py-16 bg-octopus-dark">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-octopus-white text-center mb-4">
+            What's Standing Between You and a Green Career?
+          </h2>
+          <p className="text-lg text-octopus-white max-w-3xl mx-auto mb-8 text-center">
+            Systemic barriers have left huge talent pools untapped - just when we need every voice to tackle climate change. Here's what that looks like in three snapshots:
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-8 bg-octopus-darkLight rounded-xl border border-octopus-dark">
+              <div className="w-20 h-20 bg-octopus-pink rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-4xl">👥</span>
+              </div>
+              <h3 className="text-xl font-semibold text-octopus-white mb-4">Barrier: Under-representation</h3>
+              <p className="text-octopus-white/80">
+                Only <strong className="text-octopus-pink">5–7%</strong> of clean-energy workers are from ethnic-minority backgrounds, despite these communities being disproportionately affected by climate change.
+              </p>
+            </div>
+            
+            <div className="text-center p-8 bg-octopus-darkLight rounded-xl border border-octopus-dark">
+              <div className="w-20 h-20 bg-octopus-green rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-4xl">🎓</span>
+              </div>
+              <h3 className="text-xl font-semibold text-octopus-white mb-4">Barrier: Lack of education & guidance</h3>
+              <p className="text-octopus-white/80">
+                <strong className="text-octopus-green">70%</strong> of young people have never received green-career guidance, leaving them unaware of opportunities in sustainability and energy sectors.
+              </p>
+            </div>
+            
+            <div className="text-center p-8 bg-octopus-darkLight rounded-xl border border-octopus-dark">
+              <div className="w-20 h-20 bg-octopus-dark rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-4xl">⚡</span>
+              </div>
+              <h3 className="text-xl font-semibold text-octopus-white mb-4">Barrier: Limited career pathways</h3>
+              <p className="text-octopus-white/80">
+                Demand for green talent must <strong className="text-octopus-primary">double by 2050</strong> to meet net-zero goals - we can't afford to exclude anyone.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Personas Section */}
+      <section className="py-20 bg-octopus-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-octopus-pink mb-6">The Problem: Access Isn't Equal</h2>
-            <p className="text-lg text-octopus-white max-w-2xl mx-auto">
-              Incredible opportunities exist, but barriers prevent many from accessing them.
+            <h2 className="text-3xl font-bold text-octopus-dark mb-4">
+              Who's Locked Out of Green Careers?
+            </h2>
+            <p className="text-lg text-octopus-black max-w-3xl mx-auto mb-12">
+              Meet the real people whose struggles inspired Greenovate Hub's four-pillar solution.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-8 bg-octopus-white rounded-xl border border-octopus-dark">
-              <div className="w-20 h-20 bg-octopus-pink rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-4xl">📊</span>
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-8 space-y-8 lg:space-y-0 items-start">
+            {/* Aisha - Supporting Persona */}
+            <div>
+              <div className="bg-octopus-darkLight p-8 rounded-xl border border-octopus-dark">
+                <div className="text-center mb-6">
+                  <div className="w-24 h-24 mx-auto mb-4">
+                    <img 
+                      src="/aisha.png" 
+                      alt="Aisha Rahman" 
+                      className="w-24 h-24 rounded-full object-cover border-2 border-octopus-pink"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-octopus-white mb-2">Aisha Rahman</h3>
+                  <p className="text-octopus-white/70 text-sm">Policy Analyst, 26</p>
+                </div>
+                <div className="space-y-6 text-sm">
+                  <div>
+                    <span className="text-octopus-green font-medium">Goals:</span>
+                    <ul className="text-octopus-white/80 mt-2 space-y-1">
+                      <li>• Transition to climate policy specialization</li>
+                      <li>• Build energy regulation expertise</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <span className="text-octopus-pink/90 font-medium">Barriers:</span>
+                    <ul className="text-octopus-white/80 mt-2 space-y-1">
+                      <li>• Limited sector knowledge</li>
+                      <li>• Needs flexible learning around full-time work</li>
+                    </ul>
+                  </div>
+                  <div className="bg-octopus-green/10 p-3 rounded-lg border border-octopus-green/50">
+                    <span className="text-octopus-green font-medium text-xs">Access:</span>
+                    <p className="text-octopus-white/90 text-xs mt-1">Flexible learning modules and evening mentorship sessions</p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-octopus-black mb-4">Representation Gap</h3>
-              <p className="text-octopus-black">
-                Only <strong className="text-octopus-pink">5-7%</strong> of green workers are from minority backgrounds, despite being most affected by climate change.
-              </p>
             </div>
-            
-            <div className="text-center p-8 bg-octopus-white rounded-xl border border-octopus-dark">
-              <div className="w-20 h-20 bg-octopus-green rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-4xl">🚧</span>
+
+            {/* Jamal - Main Persona */}
+            <div>
+              <div className="bg-octopus-dark p-8 rounded-xl border-2 border-octopus-green transform lg:scale-105 relative">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-octopus-green text-octopus-black px-3 py-1 rounded-full text-sm font-medium">
+                    Primary Focus
+                  </span>
+                </div>
+                <div className="text-center mb-6">
+                  <div className="w-24 h-24 mx-auto mb-4">
+                    <img 
+                      src="/jamal.png" 
+                      alt="Jamal Patel" 
+                      className="w-24 h-24 rounded-full object-cover border-2 border-octopus-green"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold text-octopus-white mb-2">Jamal Patel</h3>
+                  <p className="text-octopus-white/80">23, First-gen Environmental Science Graduate</p>
+                </div>
+                
+                <div className="space-y-6">
+                  <div className="bg-octopus-darkLight p-4 rounded-lg">
+                    <span className="text-octopus-green font-semibold text-sm">🎯 Goals:</span>
+                    <ul className="text-octopus-white/90 text-sm mt-2 space-y-1">
+                      <li>• Land a junior sustainability role</li>
+                      <li>• Grow a professional network</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-octopus-darkLight p-4 rounded-lg">
+                    <span className="text-octopus-pink/90 font-semibold text-sm">🚧 Barriers:</span>
+                    <ul className="text-octopus-white/90 text-sm mt-2 space-y-1">
+                      <li>• Invisible opportunities in green sector</li>
+                      <li>• Lack of mentorship and industry connections</li>
+                      <li>• Financial & decision-making constraints</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-octopus-green/10 p-4 rounded-lg border border-octopus-green/50">
+                    <span className="text-octopus-green font-medium text-xs">Access:</span>
+                    <p className="text-octopus-white/90 text-xs mt-1">
+                      Tailored assessment, mentorship, and funding - your barrier-free path in one click.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-octopus-black mb-4">Hidden Barriers</h3>
-              <p className="text-octopus-black">
-                Cost, time, networks, childcare, and confidence gaps block talented individuals from green careers.
-              </p>
             </div>
-            
-            <div className="text-center p-8 bg-octopus-white rounded-xl border border-octopus-dark">
-              <div className="w-20 h-20 bg-octopus-dark rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-4xl">📈</span>
+
+            {/* Rohan - Supporting Persona */}
+            <div>
+              <div className="bg-octopus-darkLight p-8 rounded-xl border border-octopus-dark">
+                <div className="text-center mb-6">
+                  <div className="w-24 h-24 mx-auto mb-4">
+                    <img 
+                      src="/rohan.png" 
+                      alt="Rohan Singh" 
+                      className="w-24 h-24 rounded-full object-cover border-2 border-octopus-accent"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-octopus-white mb-2">Rohan Singh</h3>
+                  <p className="text-octopus-white/70 text-sm">Solar Installer, 29</p>
+                </div>
+                <div className="space-y-6 text-sm">
+                  <div>
+                    <span className="text-octopus-green font-medium">Goals:</span>
+                    <ul className="text-octopus-white/80 mt-2 space-y-1">
+                      <li>• Advance to solar project management</li>
+                      <li>• Gain business skills for own company</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <span className="text-octopus-pink/90 font-medium">Barriers:</span>
+                    <ul className="text-octopus-white/80 mt-2 space-y-1">
+                      <li>• Time constraints around shift work</li>
+                      <li>• Needs practical, flexible learning</li>
+                    </ul>
+                  </div>
+                  <div className="bg-octopus-green/10 p-3 rounded-lg border border-octopus-green/50">
+                    <span className="text-octopus-green font-medium text-xs">Access:</span>
+                    <p className="text-octopus-white/90 text-xs mt-1">Bite-sized practical modules and weekend networking events</p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-octopus-black mb-4">Growing Opportunity</h3>
-              <p className="text-octopus-black">
-                Green careers grow <strong className="text-octopus-green">50% faster</strong> than other sectors, creating millions of new jobs.
-              </p>
+            </div>
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-octopus-black/70 text-sm max-w-2xl mx-auto mb-6">
+              Our platform addresses the unique challenges faced by each persona through tailored assessments, 
+              flexible learning paths, and barrier-specific support resources.
+            </p>
+            <div className="mt-8">
+              <Button
+                size="lg"
+                className="bg-octopus-primary hover:bg-octopus-darkLight text-octopus-white font-semibold px-8"
+                onClick={() => setIsModalOpen(true)}
+              >
+                Ready to break these barriers? Start your Access Journey
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Solution Overview */}
-      <section className="py-16 bg-octopus-white">
+      <section className="py-16 bg-octopus-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-octopus-dark mb-4">Our Solution: Personalized Pathways</h2>
-            <p className="text-lg text-octopus-black max-w-3xl mx-auto">
-              We've reimagined access to green careers through intelligent matching, barrier-aware support, 
-              and community-driven resources that meet people where they are.
+            <h2 className="text-3xl font-bold text-octopus-white mb-4">
+              How Greenovate Hub Unlocks Access
+            </h2>
+            <p className="text-lg text-octopus-white max-w-3xl mx-auto mb-8">
+              Four pillars - assessment, pathways, mentorship, funding - work together to break down each barrier you saw above.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-8">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-octopus-primary rounded-lg flex items-center justify-center flex-shrink-0">
                   <Target className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-octopus-black mb-2">Smart Assessment</h3>
-                  <p className="text-octopus-black">
-                    Our 9-step journey maps your skills, ambitions, and challenges to create a personalized roadmap.
+                  <h3 className="text-xl font-semibold text-octopus-white mb-2">Discover Where You Stand</h3>
+                  <p className="text-octopus-white">
+                    Our 9-step assessment maps your skills, passions, and obstacles. We pinpoint exactly which tier of the Green Skills Pyramid you occupy - so you stop guessing and start progressing.
                   </p>
                 </div>
               </div>
@@ -262,21 +412,35 @@ export default function AccessOSPage() {
                   <Users className="w-6 h-6 text-octopus-black" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-octopus-black mb-2">Mentor Matching</h3>
-                  <p className="text-octopus-black">
-                    Connect with professionals from similar backgrounds who understand your journey and can guide your growth.
+                  <h3 className="text-xl font-semibold text-octopus-white mb-2">Connect with Your Champions</h3>
+                  <p className="text-octopus-white">
+                    Get paired with pros who've walked your path. From first-gen grads to career pivoters, they've been where you are and know how to guide you forward.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="space-y-8">
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-octopus-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                  <BookOpen className="w-6 h-6 text-octopus-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-octopus-white mb-2">Choose Your Path</h3>
+                  <p className="text-octopus-white">
+                    Tailored roadmaps translate your assessment into bite-sized actions: courses, events, and projects carefully curated for your level.
                   </p>
                 </div>
               </div>
               
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-octopus-pink rounded-lg flex items-center justify-center flex-shrink-0">
-                  <BookOpen className="w-6 h-6 text-octopus-white" />
+                  <span className="text-octopus-white text-lg font-bold">£</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-octopus-black mb-2">Barrier-Aware Resources</h3>
-                  <p className="text-octopus-black">
-                    Targeted support for real challenges like cost, time, childcare, confidence, and digital access.
+                  <h3 className="text-xl font-semibold text-octopus-white mb-2">Unlock the Resources You Need</h3>
+                  <p className="text-octopus-white">
+                    Grants, scholarships, micro-certificates - you'll see only the low-cost or free options you qualify for, so money never stands between you and progress.
                   </p>
                 </div>
               </div>
@@ -286,17 +450,16 @@ export default function AccessOSPage() {
       </section>
 
       {/* Green Skills Pyramid */}
-      <section className="bg-octopus-dark py-16">
+      <section className="bg-octopus-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-octopus-white mb-4">The <span className="text-octopus-green">Green</span> Skills Pyramid</h2>
-            <p className="text-lg text-octopus-white max-w-3xl mx-auto mb-6">
-              Your pathway to green career success. Every role in the green economy builds on these four foundational tiers. 
-              Discover where you are now and plan your next steps up the pyramid.
+            <h2 className="text-3xl font-bold text-octopus-dark mb-4">Access Pyramid: Your Pathway to <span className="text-octopus-green">Green</span> Careers</h2>
+            <p className="text-lg text-octopus-black max-w-3xl mx-auto mb-6">
+              Discover your access level and plan your ascent through the green-careers pyramid. Every role in the green economy builds on these four foundational tiers.
             </p>
             <div className="bg-octopus-darkLight p-4 rounded-lg max-w-2xl mx-auto">
               <p className="text-octopus-white text-sm">
-                💡 <strong>How it works:</strong> Click or hover over each tier to learn more about the skills and opportunities at that level.
+                💡 <strong>Click each tier to see the skills and pathways you unlock.</strong>
               </p>
             </div>
           </div>
@@ -342,26 +505,23 @@ export default function AccessOSPage() {
       </section>
 
       {/* Top Green Roles */}
-      <section className="bg-white py-20 m-16 rounded-2xl">
+      <section className="bg-octopus-dark py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-heading-lg text-octopus-primary mb-6">Explore <span className="text-green-600">Green</span> Career Opportunities</h2>
-            <p className="text-body-lg text-octopus-textDark/80">Discover what's possible in the growing green economy</p>
+            <h2 className="text-3xl font-bold text-octopus-white mb-6">Explore <span className="text-octopus-green">Green</span> Careers</h2>
+            <p className="text-lg text-octopus-white">Discover what's possible in the growing green economy</p>
           </div>
 
           <GreenRolesGrid roles={greenRoles} />
         </div>
       </section>
 
-      {/* Spacer Section */}
-      <div className="bg-white py-12"></div>
-
             {/* How Our Tools Work */}
-      <section className="bg-octopus-darkLight py-16">
+      <section className="bg-octopus-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-octopus-white mb-4">What Our Tools Actually Do</h2>
-            <p className="text-lg text-octopus-white">Four simple steps to your green career</p>
+            <h2 className="text-3xl font-bold text-octopus-dark mb-4">What Our Tools Actually Do</h2>
+            <p className="text-lg text-octopus-black">Four simple steps to your green career</p>
           </div>
 
           <div className="max-w-3xl mx-auto">
@@ -372,9 +532,9 @@ export default function AccessOSPage() {
                   <span className="text-octopus-white font-bold text-lg">1</span>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-octopus-white mb-2">Assess Your Skills & Background</h3>
-                  <p className="text-octopus-white/80">
-                    Take our 10-minute assessment to map your existing strengths across 8 core competencies and identify where you fit in the Green Skills Pyramid.
+                  <h3 className="text-xl font-semibold text-octopus-dark mb-2">Access Your Skills & Background</h3>
+                  <p className="text-octopus-black">
+                    Take our 10-minute assessment to map your existing strengths across 8 core competencies and identify where you fit in the Green Skills Pyramid. Links to education pillar.
                   </p>
                 </div>
               </div>
@@ -385,9 +545,9 @@ export default function AccessOSPage() {
                   <span className="text-octopus-white font-bold text-lg">2</span>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-octopus-white mb-2">Identify & Address Barriers</h3>
-                  <p className="text-octopus-white/80">
-                    We detect specific challenges you might face (cost, time, confidence, childcare) and provide targeted solutions and resources for each one.
+                  <h3 className="text-xl font-semibold text-octopus-dark mb-2">Access Tailored Solutions</h3>
+                  <p className="text-octopus-black">
+                    We detect specific challenges you might face (cost, time, confidence, childcare) and provide targeted pathways and funding solutions. Links to funding pillar.
                   </p>
                 </div>
               </div>
@@ -398,9 +558,9 @@ export default function AccessOSPage() {
                   <span className="text-octopus-black font-bold text-lg">3</span>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-octopus-white mb-2">Connect with Matching Mentors</h3>
-                  <p className="text-octopus-white/80">
-                    Get matched with professionals who share similar backgrounds and have walked your path. Real people who understand your journey.
+                  <h3 className="text-xl font-semibold text-octopus-dark mb-2">Access Mentorship</h3>
+                  <p className="text-octopus-black">
+                    Get matched with professionals who share similar backgrounds and have walked your path. Real people who understand your journey. Links to mentorship pillar.
                   </p>
                 </div>
               </div>
@@ -411,9 +571,9 @@ export default function AccessOSPage() {
                   <span className="text-octopus-white font-bold text-lg">4</span>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-octopus-white mb-2">Get Your Personalized Action Plan</h3>
-                  <p className="text-octopus-white/80">
-                    Receive a step-by-step roadmap with specific courses, funding opportunities, and connections tailored to your goals and timeline.
+                  <h3 className="text-xl font-semibold text-octopus-dark mb-2">Access Your Action Plan</h3>
+                  <p className="text-octopus-black">
+                    Receive a step-by-step roadmap with specific courses, funding opportunities, and connections tailored to your goals. Links to pathways pillar.
                   </p>
                 </div>
               </div>
@@ -433,140 +593,34 @@ export default function AccessOSPage() {
         </div>
       </section>
 
-      {/* Impact & Results */}
-      <section className="bg-octopus-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-octopus-dark mb-4">Real Impact, Real Results</h2>
-            <p className="text-lg text-octopus-black max-w-3xl mx-auto">
-              Join thousands who've used our platform to break into green careers and create positive change.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <div className="bg-octopus-white p-6 rounded-xl border border-octopus-dark">
-              <div className="w-12 h-12 bg-octopus-pink rounded-full flex items-center justify-center text-octopus-white font-semibold mb-4 mx-auto">
-                A
-              </div>
-              <blockquote className="text-sm text-octopus-black mb-3 text-center italic">
-                "Finally, a platform that gets it. They understood my barriers and matched me with someone who looked like me."
-              </blockquote>
-              <cite className="text-octopus-dark font-medium text-xs text-center block">Amara, London</cite>
-            </div>
-            
-            <div className="bg-octopus-white p-6 rounded-xl border border-octopus-dark">
-              <div className="w-12 h-12 bg-octopus-green rounded-full flex items-center justify-center text-octopus-black font-semibold mb-4 mx-auto">
-                M
-              </div>
-              <blockquote className="text-sm text-octopus-black mb-3 text-center italic">
-                "As a single mother, I thought green careers were out of reach. This platform proved me wrong."
-              </blockquote>
-              <cite className="text-octopus-dark font-medium text-xs text-center block">Mehreen, Birmingham</cite>
-            </div>
-            
-            <div className="bg-octopus-white p-6 rounded-xl border border-octopus-dark">
-              <div className="w-12 h-12 bg-octopus-dark rounded-full flex items-center justify-center text-octopus-white font-semibold mb-4 mx-auto">
-                J
-              </div>
-              <blockquote className="text-sm text-octopus-black mb-3 text-center italic">
-                "From feeling invisible to landing my dream role. This platform saw my potential when others didn't."
-              </blockquote>
-              <cite className="text-octopus-dark font-medium text-xs text-center block">Jamal, Manchester</cite>
-            </div>
-            
-            <div className="bg-octopus-white p-6 rounded-xl border border-octopus-dark">
-              <div className="w-12 h-12 bg-octopus-darkLight rounded-full flex items-center justify-center text-octopus-white font-semibold mb-4 mx-auto">
-                P
-              </div>
-              <blockquote className="text-sm text-octopus-black mb-3 text-center italic">
-                "They didn't just help me find a job - they helped me belong in an industry that needed my voice."
-              </blockquote>
-              <cite className="text-octopus-dark font-medium text-xs text-center block">Priya, Leeds</cite>
-            </div>
-          </div>
-
-
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-        <div className="bg-octopus-dark rounded-2xl p-12 text-octopus-white">
-          <h2 className="text-3xl font-bold text-octopus-white mb-4">Your <span className="text-octopus-green">Green Career</span> Starts Here</h2>
-          <p className="text-xl mb-2">Take our 10-minute assessment and get your personalized roadmap</p>
-          <p className="text-lg mb-8">Join thousands building diverse, sustainable careers</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-octopus-pink hover:bg-octopus-darkLight text-octopus-white font-semibold"
-              onClick={() => setIsModalOpen(true)}
-            >
-              Start Your Assessment Now
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-octopus-white text-octopus-white hover:bg-octopus-white hover:text-octopus-dark"
-            >
-              Watch 2-Min Demo
-            </Button>
-          </div>
-          <div className="mt-6 bg-octopus-darkLight p-4 rounded-lg">
-            <div className="text-lg font-semibold mb-2">
-              ✅ Completely free  ✅ No account required*  ✅ Results in 10 minutes
-            </div>
-            <div className="text-sm">
-              *Account optional for saving results and community features
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partners Section */}
       <section className="bg-octopus-dark py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-octopus-white mb-6">Our Partners</h2>
-            <p className="text-lg text-octopus-white max-w-2xl mx-auto">
-              Working together to expand access to green careers through mentorship and community
+          <div className="bg-octopus-darkLight rounded-2xl p-12 text-center">
+            <h2 className="text-3xl font-bold text-octopus-white text-center mb-4">
+              Where Do You Go Next?
+            </h2>
+            <p className="text-lg text-octopus-white max-w-2xl mx-auto mb-8">
+              Take just 10 minutes to start your assessment - then watch the doors to green careers swing wide open.
             </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            <div className="text-center p-8 bg-octopus-white rounded-xl border border-octopus-darkLight">
-              <div className="w-20 h-20 bg-octopus-pink rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl font-bold text-octopus-white">R</span>
+            <div className="text-center mx-auto max-w-md">
+              <Button
+                size="lg"
+                className="bg-octopus-primary hover:bg-octopus-darkLight text-octopus-white font-semibold mb-6"
+                onClick={() => setIsModalOpen(true)}
+              >
+                Begin My Assessment
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
+            <div className="mt-6 bg-octopus-darkLight p-4 rounded-lg">
+              <div className="text-lg font-semibold mb-2 text-octopus-white">
+                ✅ Completely free  ✅ No account required*  ✅ Results in 10 minutes
               </div>
-              <h3 className="text-xl font-semibold text-octopus-black mb-4">RCT</h3>
-              <h4 className="font-semibold text-octopus-pink mb-3">Rewriting the Code</h4>
-              <p className="text-octopus-black mb-4">
-                Empowering women and non-binary individuals in tech and sustainability careers through mentorship, community, and professional development.
-              </p>
-              <div className="flex justify-center">
-                <Badge className="bg-octopus-pink text-octopus-white font-medium">Mentorship Partner</Badge>
+              <div className="text-sm text-octopus-white">
+                *Account optional for saving results and community features
               </div>
             </div>
-            
-            <div className="text-center p-8 bg-octopus-white rounded-xl border border-octopus-darkLight">
-              <div className="w-20 h-20 bg-octopus-green rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl font-bold text-octopus-black">B</span>
-              </div>
-              <h3 className="text-xl font-semibold text-octopus-black mb-4">BCS</h3>
-              <h4 className="font-semibold text-octopus-green mb-3">British Computer Society</h4>
-              <p className="text-octopus-black mb-4">
-                Professional network for technologists working on climate solutions, providing expertise and career pathways in green technology.
-              </p>
-              <div className="flex justify-center">
-                <Badge className="bg-octopus-green text-octopus-black font-medium">Tech Network Partner</Badge>
-              </div>
-            </div>
-          </div>
-          
-          <div className="text-center mt-12">
-            <p className="text-sm text-octopus-white">
-              Interested in partnering with us? <a href="#" className="text-octopus-pink underline hover:text-octopus-green">Get in touch</a>
-            </p>
           </div>
         </div>
       </section>
@@ -575,9 +629,9 @@ export default function AccessOSPage() {
       <section className="bg-octopus-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-octopus-dark mb-4">Help Us Build a Better Platform</h2>
+            <h2 className="text-3xl font-bold text-octopus-dark mb-4">Help Shape Access for Diverse Communities</h2>
             <p className="text-lg text-octopus-black max-w-3xl mx-auto mb-6">
-              Your voice matters in creating tools that truly serve underrepresented communities. 
+              Your ideas unlock better access to education, funding & mentorship. 
               Share what's missing, what's working, and what could work better.
             </p>
             
@@ -597,21 +651,130 @@ export default function AccessOSPage() {
                 className="bg-octopus-pink hover:bg-octopus-pink/90 text-octopus-white font-semibold px-8"
                 onClick={() => setIsFeedbackModalOpen(true)}
               >
-                Share Your Ideas
+                Share Your Idea
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-octopus-dark text-octopus-dark hover:bg-octopus-dark hover:text-octopus-white font-semibold px-8"
+                className="border-2 border-octopus-dark text-octopus-dark bg-transparent hover:bg-octopus-pink hover:border-octopus-pink hover:text-octopus-white font-semibold px-8"
                 onClick={() => setIsCommunityModalOpen(true)}
               >
-                Community Ideas & Suggestions
+                View Community Suggestions
               </Button>
             </div>
             
             <div className="mt-6 text-sm text-octopus-black">
               💚 Together we're building the most inclusive green careers platform in the world
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Real Impact, Real Results */}
+      <section className="bg-octopus-dark py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-octopus-white mb-4">Real Impact, Real Results</h2>
+            <p className="text-lg text-octopus-white max-w-3xl mx-auto">
+              Join thousands who've used our platform to break into green careers and create positive change.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="bg-octopus-white p-6 rounded-xl border border-octopus-darkLight">
+              <div className="w-12 h-12 bg-octopus-pink rounded-full flex items-center justify-center text-octopus-white font-semibold mb-4 mx-auto">
+                A
+              </div>
+              <blockquote className="text-sm text-octopus-black mb-3 text-center italic">
+                "Finally, a platform that gets it. They understood my barriers and matched me with someone who looked like me."
+              </blockquote>
+              <cite className="text-octopus-black font-medium text-xs text-center block">Amara, London</cite>
+            </div>
+            
+            <div className="bg-octopus-white p-6 rounded-xl border border-octopus-darkLight">
+              <div className="w-12 h-12 bg-octopus-green rounded-full flex items-center justify-center text-octopus-black font-semibold mb-4 mx-auto">
+                M
+              </div>
+              <blockquote className="text-sm text-octopus-black mb-3 text-center italic">
+                "As a single mother, I thought green careers were out of reach. This platform proved me wrong."
+              </blockquote>
+              <cite className="text-octopus-black font-medium text-xs text-center block">Mehreen, Birmingham</cite>
+            </div>
+            
+            <div className="bg-octopus-white p-6 rounded-xl border border-octopus-darkLight">
+              <div className="w-12 h-12 bg-octopus-dark rounded-full flex items-center justify-center text-octopus-white font-semibold mb-4 mx-auto">
+                J
+              </div>
+              <blockquote className="text-sm text-octopus-black mb-3 text-center italic">
+                "From feeling invisible to landing my dream role. This platform saw my potential when others didn't."
+              </blockquote>
+              <cite className="text-octopus-black font-medium text-xs text-center block">Jamal, Manchester</cite>
+            </div>
+            
+            <div className="bg-octopus-white p-6 rounded-xl border border-octopus-darkLight">
+              <div className="w-12 h-12 bg-octopus-darkLight rounded-full flex items-center justify-center text-octopus-white font-semibold mb-4 mx-auto">
+                P
+              </div>
+              <blockquote className="text-sm text-octopus-black mb-3 text-center italic">
+                "They didn't just help me find a job - they helped me belong in an industry that needed my voice."
+              </blockquote>
+              <cite className="text-octopus-black font-medium text-xs text-center block">Priya, Leeds</cite>
+            </div>
+          </div>
+          
+          <div className="text-center text-lg my-12">
+            <p className="text-octopus-white max-w-3xl mx-auto">
+              Thousands of under-represented changemakers have already used Greenovate Hub to land internships, launch startups, and secure full-time roles. You could be next.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section className="bg-octopus-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-octopus-dark mb-6">Our Partners</h2>
+            <p className="text-lg text-octopus-black max-w-2xl mx-auto">
+              Working together to expand access to green careers through mentorship and community
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            <div className="text-center p-8 bg-octopus-dark rounded-xl border border-octopus-darkLight">
+              <div className="w-20 h-20 bg-octopus-pink rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-3xl font-bold text-octopus-white">R</span>
+              </div>
+              <h3 className="text-xl font-semibold text-octopus-white mb-4">RCT</h3>
+              <h4 className="font-semibold text-octopus-pink mb-3">Rewriting the Code</h4>
+              <p className="text-octopus-white mb-4">
+                Empowering women and non-binary individuals in tech and sustainability careers through mentorship, community, and professional development.
+              </p>
+              <div className="flex justify-center">
+                <Badge className="bg-octopus-pink text-octopus-white font-medium">Mentorship Partner</Badge>
+              </div>
+            </div>
+            
+            <div className="text-center p-8 bg-octopus-dark rounded-xl border border-octopus-darkLight">
+              <div className="w-20 h-20 bg-octopus-green rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-3xl font-bold text-octopus-black">B</span>
+              </div>
+              <h3 className="text-xl font-semibold text-octopus-white mb-4">BCS</h3>
+              <h4 className="font-semibold text-octopus-green mb-3">British Computer Society</h4>
+              <p className="text-octopus-white mb-4">
+                Professional network for technologists working on climate solutions, providing expertise and career pathways in green technology.
+              </p>
+              <div className="flex justify-center">
+                <Badge className="bg-octopus-green text-octopus-black font-medium">Tech Network Partner</Badge>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-sm text-octopus-black">
+              Interested in partnering with us? <a href="#" className="text-octopus-pink underline hover:text-octopus-green">Get in touch</a>
+            </p>
           </div>
         </div>
       </section>
@@ -624,9 +787,11 @@ export default function AccessOSPage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-octopus-pink rounded-full flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-octopus-white" />
-                </div>
+                <img 
+                  src="/logo-octopus-energy.png" 
+                  alt="Octopus Energy" 
+                  className="h-8 w-auto"
+                />
                 <span className="text-xl font-bold text-octopus-white">Octopus Energy</span>
               </div>
               <p className="text-octopus-white text-sm leading-relaxed">
@@ -718,14 +883,17 @@ export default function AccessOSPage() {
             </div>
           </div>
           <div className="border-t border-octopus-darkLight mt-8 pt-8">
+            <div className="text-center mb-6">
+              <p className="text-octopus-white text-lg">
+                Greenovate Hub is an Octopus Energy initiative to democratize access to green careers. Join our movement.
+              </p>
+            </div>
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-sm text-octopus-white">
-                &copy; 2024 Octopus Energy. All rights reserved. Building diverse green careers.
+                &copy; 2024 Team Hacktopus. All rights reserved. Building diverse green careers.
               </p>
               <div className="flex items-center space-x-4 text-sm text-octopus-white">
                 <span>Made with 💚 for climate action</span>
-                <span>•</span>
-                <span>Thousands of careers launched</span>
               </div>
             </div>
           </div>
