@@ -9,6 +9,7 @@ const config: Config = {
     "./src/**/*.{ts,tsx}",
     "*.{js,ts,jsx,tsx,mdx}",
   ],
+
   prefix: "",
   theme: {
     container: {
@@ -53,15 +54,14 @@ const config: Config = {
           DEFAULT: "#FFFFFF", // White cards for light backgrounds
           foreground: "#000000", // Black text on white cards
         },
-        // Custom Octopus brand colors with proper naming
+        // Simplified brand colors
         octopus: {
-          background: "#100030", // Dark blue background
-          heading: "#13C395", // Blue for headings
-          textLight: "#FFFFFF", // Light blue text on dark backgrounds
-          textDark: "#000000", // Black text on light backgrounds
-          card: "#FFFFFF", // White for card backgrounds
-          primary: "#13C395", // Green
-          accent: "#F050F7", // Pink
+          dark: "#100030", // Dark blue
+          darkLight: "#180048", // Slightly lighter dark blue
+          pink: "#FF48D8", // Pink
+          green: "#19F0B9", // Green
+          black: "#000000", // Black
+          white: "#FFFFFF", // White
         },
       },
       borderRadius: {

@@ -103,6 +103,18 @@
       "label": "Language",
       "icon": "🗣️",
       "tip": "Look for training in your preferred language, or programs that offer language support alongside technical training. Many employers value multilingual skills in green careers."
+    },
+    {
+      "key": "imposter",
+      "label": "Imposter Syndrome",
+      "icon": "🤔",
+      "tip": "You belong in green careers! Connect with mentors who've felt the same way, join peer support groups, and remember that diverse perspectives are essential for solving climate challenges."
+    },
+    {
+      "key": "confidence",
+      "label": "Lack of Confidence",
+      "icon": "💪",
+      "tip": "Build confidence through small wins and skill-building. Join supportive communities, celebrate your progress, and remember that everyone starts somewhere. Your unique background is an asset."
     }
   ],
   "modules": [

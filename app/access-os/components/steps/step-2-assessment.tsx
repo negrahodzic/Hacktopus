@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Slider } from "@/components/ui/slider"
 import { Badge } from "@/components/ui/badge"
 import { useWizard } from "../modal-wizard"
@@ -50,10 +49,10 @@ export default function Step2Assessment() {
   const allSkillsRated = skillsToAssess.every((skill) => skills[skill.key] > 0)
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
-      <div className="text-center">
-        <h1 className="text-3xl font-bold text-octopus-heading mb-4">Self-Assessment</h1>
-        <p className="text-lg text-octopus-textDark">Rate your current skills from 1 (developing) to 5 (expert)</p>
+    <div className="max-w-6xl mx-auto space-y-8">
+      <div className="text-center mb-8">
+        <h1 className="text-3xl font-bold text-octopus-white mb-4">Self-Assessment</h1>
+        <p className="text-lg text-octopus-white/80">Rate your current skills from 1 (developing) to 5 (expert)</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
@@ -62,70 +61,72 @@ export default function Step2Assessment() {
           const level = getSkillLevel(currentValue)
 
           return (
-            <Card key={skill.key} className="hover:shadow-md transition-shadow">
-              <CardHeader className="pb-3">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-lg text-octopus-textDark">{skill.label}</CardTitle>
-                  <Badge className={level.color}>{level.label}</Badge>
+            <div key={skill.key} className="bg-octopus-dark p-6 rounded-xl border border-octopus-white/20">
+              <div className="mb-4">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-lg font-semibold text-octopus-white">{skill.label}</h3>
+                  <Badge className={`${level.color} font-medium`}>{level.label}</Badge>
                 </div>
-                <p className="text-sm text-octopus-textDark">{skill.description}</p>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  <Slider
-                    value={[currentValue]}
-                    onValueChange={(value) => handleSkillChange(skill.key, value)}
-                    max={5}
-                    min={1}
-                    step={1}
-                    className="w-full"
-                  />
-                  <div className="flex justify-between text-xs text-gray-500">
-                    <span>Developing</span>
-                    <span>Basic</span>
-                    <span>Good</span>
-                    <span>Strong</span>
-                    <span>Expert</span>
-                  </div>
+                <p className="text-sm text-octopus-white/70">{skill.description}</p>
+              </div>
+              <div className="space-y-3">
+                <Slider
+                  value={[currentValue]}
+                  onValueChange={(value) => handleSkillChange(skill.key, value)}
+                  max={5}
+                  min={1}
+                  step={1}
+                  className="w-full"
+                />
+                <div className="flex justify-between text-xs text-octopus-white/50">
+                  <span>Developing</span>
+                  <span>Basic</span>
+                  <span>Good</span>
+                  <span>Strong</span>
+                  <span>Expert</span>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           )
         })}
       </div>
 
       {lowSkills.length > 0 && (
-        <Card className="bg-blue-50 border-blue-200">
-          <CardContent className="p-4">
-            <div className="flex items-start space-x-3">
-              <span className="text-2xl">🤖</span>
-              <div>
-                <h3 className="font-semibold text-blue-900 mb-2">AI Learning Suggestions</h3>
-                <p className="text-blue-800 text-sm mb-2">
-                  Based on your ratings, we'll suggest mini-lessons for: <strong>{lowSkills.join(", ")}</strong>
-                </p>
-                <p className="text-blue-700 text-xs">
-                  Don't worry - everyone has areas to develop! We'll provide targeted resources to help you grow.
-                </p>
-              </div>
+        <div className="bg-octopus-dark p-4 rounded-xl border border-octopus-green/20">
+          <div className="flex items-start space-x-3">
+            <span className="text-2xl">🤖</span>
+            <div>
+              <h3 className="font-semibold text-octopus-white mb-2">AI Learning Suggestions</h3>
+              <p className="text-octopus-white/80 text-sm mb-2">
+                Based on your ratings, we'll suggest mini-lessons for: <strong className="text-octopus-green">{lowSkills.join(", ")}</strong>
+              </p>
+              <p className="text-octopus-white/60 text-xs">
+                Don't worry - everyone has areas to develop! We'll provide targeted resources to help you grow.
+              </p>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       )}
 
       {!allSkillsRated && (
-        <Card className="bg-amber-50 border-amber-200">
-          <CardContent className="p-4">
-            <p className="text-amber-800 text-sm">⚠️ Please rate all skills to continue</p>
-          </CardContent>
-        </Card>
+        <div className="bg-octopus-dark p-4 rounded-xl border border-octopus-pink/30">
+          <p className="text-octopus-pink text-sm">⚠️ Please rate all skills to continue</p>
+        </div>
       )}
 
       <div className="flex justify-between pt-4">
-        <Button variant="outline" onClick={prevStep}>
+        <Button 
+          variant="outline" 
+          onClick={prevStep}
+          className="border-octopus-white/20 text-octopus-white hover:bg-octopus-white/10"
+        >
           Back
         </Button>
-        <Button onClick={handleNext} disabled={!allSkillsRated} className="bg-purple-600 hover:bg-purple-700">
+        <Button 
+          onClick={handleNext} 
+          disabled={!allSkillsRated} 
+          className="bg-octopus-pink hover:bg-octopus-pink/90 text-octopus-white font-semibold disabled:opacity-50"
+        >
           Continue
         </Button>
       </div>

@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Share2, Linkedin } from "lucide-react"
+import { useWizard } from "./modal-wizard"
 
 interface SocialShareProps {
   step: number
@@ -22,11 +23,48 @@ const stepMessages = {
 }
 
 export default function SocialShare({ step, stepName, achievement }: SocialShareProps) {
-  const message = stepMessages[step as keyof typeof stepMessages] || "Making progress on my green career journey!"
+  const { data } = useWizard()
+  
+  // Generate dynamic content based on user's assessment
+  const generateDynamicMessage = () => {
+    const tier = data.tier || "Explorer"
+    const score = data.score || 0
+    const domains = data.domains || []
+    const topSkills = Object.entries(data.skills || {})
+      .filter(([_, value]) => value >= 4)
+      .map(([skill, _]) => skill)
+      .slice(0, 3)
+    
+    const improvementSkills = Object.entries(data.skills || {})
+      .filter(([_, value]) => value <= 2)
+      .map(([skill, _]) => skill)
+      .slice(0, 2)
+
+    let message = `🌱 Just completed my Green Career Assessment with @OctopusEnergy!\n\n`
+    message += `🎯 My Green Career Tier: ${tier} (${score}/100)\n`
+    
+    if (domains.length > 0) {
+      message += `🔍 Interested in: ${domains.join(", ")}\n`
+    }
+    
+    if (topSkills.length > 0) {
+      message += `💪 Strong skills: ${topSkills.join(", ")}\n`
+    }
+    
+    if (improvementSkills.length > 0) {
+      message += `📈 Growing in: ${improvementSkills.join(", ")}\n`
+    }
+    
+    message += `\n🚀 Ready to break barriers and build a sustainable career!\n`
+    message += `\nDiscover your green career path with Octopus Energy's Access OS! 🐙`
+    
+    return message
+  }
 
   const shareToLinkedIn = () => {
+    const dynamicMessage = generateDynamicMessage()
     const text = encodeURIComponent(
-      `${message}\n\n${achievement ? `Achievement: ${achievement}\n\n` : ""}Discover your green career path with @OctopusEnergy's Access OS tool! 🐙\n\n#GreenJobs #Sustainability #ClimateAction #OctopusEnergy`,
+      `${dynamicMessage}\n\n#GreenJobs #Sustainability #ClimateAction #GreenCareers #OctopusEnergy #NetZero #SustainableFuture`
     )
     const url = encodeURIComponent(window.location.origin + "/access-os")
 
@@ -38,14 +76,14 @@ export default function SocialShare({ step, stepName, achievement }: SocialShare
   }
 
   return (
-    <Card className="bg-octopus-accent/10 border-octopus-accent/20">
+    <Card className="bg-octopus-darkLight border-octopus-white/20">
       <CardContent className="p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <Share2 className="w-5 h-5 text-octopus-accent" />
+            <Share2 className="w-5 h-5 text-octopus-green" />
             <div>
-              <h4 className="font-semibold text-octopus-text">Share Your Progress!</h4>
-              <p className="text-sm text-octopus-text/70">Let your network know about your green career journey</p>
+              <h4 className="font-semibold text-octopus-white">Share Your Progress!</h4>
+              <p className="text-sm text-octopus-white/70">Let your network know about your green career journey</p>
             </div>
           </div>
           <Button onClick={shareToLinkedIn} className="bg-[#0077B5] hover:bg-[#005885] text-white" size="sm">

@@ -16,7 +16,9 @@ import Step5Networks from "./steps/step-5-networks"
 import Step5PeerNetwork from "./steps/step-5-5-peer-network"
 import Step6Review from "./steps/step-6-review"
 import Step7ActionPlan from "./steps/step-7-action-plan"
+import Step8ShareExperience from "./steps/step-8-share-experience"
 import SocialShare from "./social-share"
+import ProgressGauge from "./progress-gauge"
 
 // Types
 export interface WizardData {
@@ -30,6 +32,7 @@ export interface WizardData {
   hasMentor: boolean
   requestMentor: boolean
   communityGroups: string
+  peerGroups?: string[]
   tier: string
   score: number
 }
@@ -73,6 +76,19 @@ const initialData: WizardData = {
   score: 0,
 }
 
+const stepProgress = [
+  { completed: "Started your journey", next: "explore green career opportunities" },
+  { completed: "learned about green careers", next: "assess your current skills" },
+  { completed: "rated your skills", next: "share your career ambitions" },
+  { completed: "shared your ambitions", next: "identify any barriers" },
+  { completed: "identified potential barriers", next: "explore networking options" },
+  { completed: "explored networks", next: "connect with peer groups" },  
+  { completed: "connected with peers", next: "share your experience" },
+  { completed: "shared your experience", next: "review your responses" },
+  { completed: "reviewed everything", next: "get your personalized action plan" },
+  { completed: "completed your assessment", next: "start your green career journey!" }
+]
+
 export default function ModalWizard({ isOpen, onClose }: ModalWizardProps) {
   const [currentStep, setCurrentStep] = useState(0)
   const [data, setData] = useState<WizardData>(initialData)
@@ -82,7 +98,7 @@ export default function ModalWizard({ isOpen, onClose }: ModalWizardProps) {
   }
 
   const nextStep = () => {
-    if (currentStep < 8) {
+    if (currentStep < 9) {
       setCurrentStep(currentStep + 1)
     }
   }
@@ -107,11 +123,12 @@ export default function ModalWizard({ isOpen, onClose }: ModalWizardProps) {
     <Step4Barriers key="step4" />,
     <Step5Networks key="step5" />,
     <Step5PeerNetwork key="step5-5" />,
+    <Step8ShareExperience key="step8" />,
     <Step6Review key="step6" />,
     <Step7ActionPlan key="step7" />,
   ]
 
-  const progress = ((currentStep + 1) / 9) * 100
+  const progress = ((currentStep + 1) / 10) * 100
 
   return (
     <WizardContext.Provider
@@ -125,38 +142,79 @@ export default function ModalWizard({ isOpen, onClose }: ModalWizardProps) {
       }}
     >
       <Dialog open={isOpen} onOpenChange={handleClose}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto p-0">
+        <DialogContent className="max-w-6xl max-h-[95vh] overflow-y-auto p-0 bg-octopus-dark border-octopus-darkLight rounded-2xl">
           <div className="relative">
             <DialogHeader className="sr-only">
-              <DialogTitle>Green Career Journey</DialogTitle>
+              <DialogTitle>Green Career Journey Assessment</DialogTitle>
             </DialogHeader>
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b bg-white sticky top-0 z-10">
+            <div className="flex items-center justify-between p-6 border-b border-octopus-darkLight sticky top-0 z-10 bg-octopus-dark">
               <div className="flex items-center space-x-4">
-                <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">O</span>
+                <div className="w-10 h-10 bg-octopus-green rounded-full flex items-center justify-center">
+                  <span className="text-octopus-black font-bold text-sm">🚀</span>
                 </div>
                 <div>
-                  <h2 className="text-lg font-semibold">Green Career Journey</h2>
-                  <p className="text-sm text-gray-500">Step {currentStep + 1} of 9</p>
+                  <h2 className="text-xl font-bold text-octopus-white">Your <span className="text-octopus-green">Green Career</span> Journey</h2>
+                  <p className="text-sm text-octopus-white/70">Step {currentStep + 1} of 10 • Personalized for you</p>
                 </div>
               </div>
-              <Button variant="ghost" size="icon" onClick={handleClose}>
-                <X className="w-5 h-5" />
-              </Button>
+              <div className="flex items-center space-x-4">
+                <div className="text-octopus-white/70 text-sm">
+                  <span className="text-octopus-green font-bold">{Math.round(progress)}%</span> Complete
+                </div>
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  onClick={handleClose}
+                  className="hover:bg-octopus-darkLight text-octopus-white transition-colors rounded-full"
+                >
+                  <X className="w-5 h-5" />
+                </Button>
+              </div>
             </div>
 
-            {/* Progress Bar */}
-            <div className="px-6 py-4 bg-gray-50">
-              <Progress value={progress} className="h-2" />
-            </div>
+            {/* Progress Info */}
+            {currentStep > 0 && (
+              <div className="px-6 py-4 bg-octopus-dark">
+                <div className="p-4 bg-octopus-darkLight rounded-lg">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-4">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-octopus-green rounded-full flex items-center justify-center">
+                          <span className="text-octopus-black text-sm font-bold">✓</span>
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium text-octopus-white">
+                            You {stepProgress[currentStep - 1]?.completed}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    {currentStep < 9 && (
+                      <div className="flex items-center space-x-3">
+                        <div className="flex items-center space-x-2">
+                          <span className="text-octopus-pink">→</span>
+                          <div>
+                            <p className="text-sm font-medium text-octopus-white/70">
+                              Next: <span className="text-octopus-pink">{stepProgress[currentStep]?.next}</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Step Content */}
-            <div className="p-6">
-              {steps[currentStep]}
-              {currentStep > 0 && (
-                <div className="mt-6">
-                  <SocialShare step={currentStep} stepName={`Step ${currentStep + 1}`} />
+            <div className="p-6 bg-octopus-dark">
+              <div className="bg-octopus-darkLight rounded-lg p-6">
+                {steps[currentStep]}
+              </div>
+              {currentStep === 9 && (
+                <div className="mt-6 p-4 bg-octopus-darkLight rounded-lg">
+                  <SocialShare step={currentStep} stepName="Green Career Journey Complete!" achievement="Completed my personalized green career assessment" />
                 </div>
               )}
             </div>
