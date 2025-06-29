@@ -69,12 +69,27 @@ export default function Step5Networks() {
                   />
                   <div>
                     <Label htmlFor="request-mentor" className="font-medium text-emerald-900 cursor-pointer">
-                      I'd like to be matched with an Octopus in Colour mentor
+                      I'd like mentorship support through our partner programs
                     </Label>
                     <p className="text-emerald-800 text-sm mt-1">
-                      Our mentors are experienced professionals from diverse backgrounds working in green careers. They
-                      provide guidance, career advice, and industry insights.
+                      We partner with <strong>RCT (Rewriting the Code)</strong> and <strong>BCS (British Computer Society)</strong> 
+                      to provide mentorship from experienced professionals in green careers who understand your unique journey.
                     </p>
+                    
+                    {requestMentor && (
+                      <div className="mt-4 p-3 bg-emerald-100 rounded-lg">
+                        <h4 className="font-medium text-emerald-900 mb-2">🎯 Smart Matching</h4>
+                        <p className="text-emerald-800 text-sm mb-2">
+                          We'll match you based on:
+                        </p>
+                        <ul className="text-emerald-800 text-sm space-y-1">
+                          <li>• Your skill development areas</li>
+                          <li>• Career interests and ambitions</li>
+                          <li>• Similar background and experiences</li>
+                          <li>• Geographic location (when possible)</li>
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </div>
               </CardContent>
@@ -101,25 +116,58 @@ export default function Step5Networks() {
         <CardHeader>
           <CardTitle className="flex items-center space-x-2 text-octopus-textDark">
             <span>👥</span>
-            <span>Community Connections</span>
+            <span>Community & Professional Networks</span>
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="space-y-3">
-            <Label htmlFor="community-groups" className="text-base font-medium text-octopus-textDark">
-              Which community groups, networks, or organizations are you part of?
-            </Label>
-            <p className="text-sm text-gray-600">
-              This could include professional networks, cultural organizations, local community groups, online
-              communities, or any groups that are important to you.
-            </p>
-            <Textarea
-              id="community-groups"
-              placeholder="e.g., Local environmental group, Professional women's network, Cultural association, Online sustainability community..."
-              value={communityGroups}
-              onChange={(e) => setCommunityGroups(e.target.value)}
-              rows={4}
-            />
+          <div className="space-y-4">
+            <div>
+              <Label className="text-base font-medium mb-3 block text-octopus-textDark">
+                Are you part of any professional communities or networks?
+              </Label>
+              <RadioGroup 
+                value={communityGroups ? "yes" : "no"} 
+                onValueChange={(value) => setCommunityGroups(value === "yes" ? "Member of professional communities" : "")}
+              >
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="yes" id="community-yes" />
+                  <Label htmlFor="community-yes">Yes, I'm active in professional communities</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="no" id="community-no" />
+                  <Label htmlFor="community-no">No, I'd like to connect with professional networks</Label>
+                </div>
+              </RadioGroup>
+            </div>
+
+            <Card className="bg-blue-50 border-blue-200">
+              <CardContent className="p-4">
+                <h4 className="font-semibold text-blue-900 mb-3">🌟 Recommended Partner Networks</h4>
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-purple-600 font-bold text-sm">R</span>
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-blue-900">RCT (Rewriting the Code)</h5>
+                      <p className="text-blue-800 text-sm">Empowering women and non-binary individuals in tech and sustainability careers</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-green-600 font-bold text-sm">B</span>
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-blue-900">BCS (British Computer Society)</h5>
+                      <p className="text-blue-800 text-sm">Professional network for technologists working on climate solutions</p>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-blue-700 text-xs mt-3">
+                  💡 We'll help connect you with these communities based on your interests and background
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </CardContent>
       </Card>
@@ -142,11 +190,14 @@ export default function Step5Networks() {
                 </Badge>
               )}
             </div>
-            {communityGroups && (
-              <p className="text-blue-800 text-sm">
-                <strong>Community connections:</strong> Active in community networks
-              </p>
-            )}
+            <div className="flex items-center space-x-2">
+              <Badge
+                variant="secondary"
+                className={communityGroups ? "bg-blue-100 text-blue-800" : "bg-gray-100 text-gray-800"}
+              >
+                {communityGroups ? "Has Professional Networks" : "Seeking Networks"}
+              </Badge>
+            </div>
           </div>
         </CardContent>
       </Card>

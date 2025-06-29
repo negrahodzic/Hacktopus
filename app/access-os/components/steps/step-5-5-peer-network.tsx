@@ -2,10 +2,8 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Textarea } from "@/components/ui/textarea"
-import { Users, MessageCircle, Heart, Send, Zap } from "lucide-react"
+import { Users, MessageCircle, ExternalLink } from "lucide-react"
 import { useWizard } from "../modal-wizard"
 
 const peerGroups = [
@@ -43,47 +41,9 @@ const peerGroups = [
   },
 ]
 
-const recentPosts = [
-  {
-    id: 1,
-    author: "Sarah M.",
-    role: "Solar Engineer",
-    content:
-      "Just completed my first commercial solar installation! The learning curve was steep but so rewarding. Any tips for optimizing panel efficiency in cloudy conditions?",
-    timestamp: "3 min ago",
-    likes: 12,
-    replies: 4,
-    group: "Solar Engineers",
-  },
-  {
-    id: 2,
-    author: "Marcus J.",
-    role: "Finance Analyst",
-    content:
-      "Excited to share that our green bond fund just hit £50M! The appetite for sustainable investments is incredible. What sectors are you most bullish on?",
-    timestamp: "15 min ago",
-    likes: 8,
-    replies: 7,
-    group: "Sustainable Finance",
-  },
-  {
-    id: 3,
-    author: "Priya K.",
-    role: "Policy Researcher",
-    content:
-      "The new Net Zero Strategy has some interesting implications for community energy projects. Anyone else diving into the details?",
-    timestamp: "1 hour ago",
-    likes: 15,
-    replies: 9,
-    group: "Climate Policy",
-  },
-]
-
 export default function Step5PeerNetwork() {
   const { data, updateData, nextStep, prevStep } = useWizard()
   const [selectedGroups, setSelectedGroups] = useState<string[]>([])
-  const [newPost, setNewPost] = useState("")
-  const [showFeed, setShowFeed] = useState(false)
 
   const handleGroupToggle = (groupId: string) => {
     setSelectedGroups((prev) => (prev.includes(groupId) ? prev.filter((id) => id !== groupId) : [...prev, groupId]))
@@ -94,33 +54,45 @@ export default function Step5PeerNetwork() {
     nextStep()
   }
 
-  const handlePostShare = () => {
-    if (newPost.trim()) {
-      // In a real app, this would post to the feed
-      setNewPost("")
-      setShowFeed(true)
-    }
-  }
-
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       <div className="text-center">
-        <h1 className="text-3xl font-bold text-octopus-heading mb-4">Join Your Peer Network</h1>
-        <p className="text-lg text-octopus-textDark">Connect with like-minded professionals and share your journey!</p>
+        <h1 className="text-3xl font-bold text-octopus-white mb-4">Join Your Peer Network</h1>
+        <p className="text-lg text-octopus-white/80">Connect with like-minded professionals and share your journey!</p>
       </div>
 
       {/* Group Selection */}
-      <Card className="bg-octopus-card">
-        <CardHeader>
-          <CardTitle className="flex items-center space-x-2 text-octopus-textDark">
+      <div className="bg-octopus-dark p-6 rounded-xl border border-octopus-white/20">
+        <div className="mb-6">
+          <h2 className="flex items-center space-x-2 text-xl font-semibold text-octopus-white mb-2">
             <Users className="w-5 h-5" />
             <span>Join Group Chats</span>
-          </CardTitle>
-          <p className="text-sm text-octopus-text/70">
+          </h2>
+          <p className="text-sm text-octopus-white/70 mb-6">
             Select the communities that match your interests. You can join multiple groups!
           </p>
-        </CardHeader>
-        <CardContent>
+          
+          <div className="mb-6">
+            <h4 className="font-medium text-octopus-white mb-3">Choose your preferred platform:</h4>
+            <div className="flex flex-wrap gap-3">
+              <Button variant="outline" size="sm" className="bg-[#5865F2] text-white border-[#5865F2] hover:bg-[#4752C4]">
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Discord
+                <ExternalLink className="w-3 h-3 ml-1" />
+              </Button>
+              <Button variant="outline" size="sm" className="bg-[#4A154B] text-white border-[#4A154B] hover:bg-[#3a1139]">
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Slack
+                <ExternalLink className="w-3 h-3 ml-1" />
+              </Button>
+              <Button variant="outline" size="sm" className="bg-[#0077B5] text-white border-[#0077B5] hover:bg-[#005885]">
+                <Users className="w-4 h-4 mr-2" />
+                LinkedIn
+                <ExternalLink className="w-3 h-3 ml-1" />
+              </Button>
+            </div>
+          </div>
+          
           <div className="grid md:grid-cols-2 gap-4">
             {peerGroups.map((group) => (
               <div
@@ -129,8 +101,8 @@ export default function Step5PeerNetwork() {
                   p-4 rounded-lg border-2 cursor-pointer transition-all
                   ${
                     selectedGroups.includes(group.id)
-                      ? "border-octopus-primary bg-octopus-primary/10"
-                      : "border-gray-200 hover:border-octopus-primary/50"
+                      ? "border-octopus-green bg-octopus-green/10"
+                      : "border-octopus-white/20 hover:border-octopus-green/50"
                   }
                 `}
                 onClick={() => handleGroupToggle(group.id)}
@@ -139,127 +111,55 @@ export default function Step5PeerNetwork() {
                   <span className="text-2xl">{group.icon}</span>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-semibold text-octopus-textDark">{group.name}</h3>
-                      <Badge variant="secondary" className="bg-octopus-accent/20 text-octopus-accent">
+                      <h3 className="font-semibold text-octopus-white">{group.name}</h3>
+                      <Badge className="bg-octopus-pink text-octopus-white">
                         {group.members} members
                       </Badge>
                     </div>
-                    <p className="text-sm text-octopus-text/70 mb-2">{group.description}</p>
+                    <p className="text-sm text-octopus-white/70 mb-2">{group.description}</p>
                     <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-octopus-primary rounded-full"></div>
-                      <span className="text-xs text-octopus-text/60">{group.recentActivity}</span>
+                      <div className="w-2 h-2 bg-octopus-green rounded-full"></div>
+                      <span className="text-xs text-octopus-white/60">{group.recentActivity}</span>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
-      {/* Share Experience */}
-      <Card className="bg-octopus-card">
-        <CardHeader>
-          <CardTitle className="flex items-center space-x-2 text-octopus-textDark">
-            <MessageCircle className="w-5 h-5" />
-            <span>Share Your Experience</span>
-          </CardTitle>
-          <p className="text-sm text-octopus-text/70">
-            Tell the community about your green career journey, challenges, or wins!
-          </p>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-3">
-            <Textarea
-              placeholder="What's happening in your green career journey? Share a win, ask for advice, or just say hello! 🌱"
-              value={newPost}
-              onChange={(e) => setNewPost(e.target.value)}
-              rows={3}
-              className="bg-white border-gray-200"
-            />
-            <div className="flex justify-between items-center">
-              <span className="text-xs text-octopus-text/60">{280 - newPost.length} characters remaining</span>
-              <Button
-                onClick={handlePostShare}
-                disabled={!newPost.trim()}
-                className="bg-octopus-primary hover:bg-octopus-primary/80"
-                size="sm"
-              >
-                <Send className="w-4 h-4 mr-2" />
-                Share
-              </Button>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
 
-      {/* Recent Community Posts */}
-      <Card className="bg-octopus-card">
-        <CardHeader>
-          <CardTitle className="flex items-center space-x-2 text-octopus-text">
-            <Zap className="w-5 h-5" />
-            <span>Community Feed</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            {recentPosts.map((post) => (
-              <div key={post.id} className="p-4 bg-white rounded-lg border">
-                <div className="flex items-start space-x-3">
-                  <div className="w-10 h-10 bg-octopus-primary rounded-full flex items-center justify-center text-white font-semibold">
-                    {post.author.charAt(0)}
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-2 mb-1">
-                      <span className="font-semibold text-octopus-textDark">{post.author}</span>
-                      <Badge variant="outline" className="text-xs">
-                        {post.role}
-                      </Badge>
-                      <span className="text-xs text-octopus-text/60">{post.timestamp}</span>
-                    </div>
-                    <p className="text-sm text-octopus-textDark mb-3">{post.content}</p>
-                    <div className="flex items-center space-x-4">
-                      <button className="flex items-center space-x-1 text-octopus-text/60 hover:text-octopus-accent">
-                        <Heart className="w-4 h-4" />
-                        <span className="text-xs">{post.likes}</span>
-                      </button>
-                      <button className="flex items-center space-x-1 text-octopus-text/60 hover:text-octopus-primary">
-                        <MessageCircle className="w-4 h-4" />
-                        <span className="text-xs">{post.replies} replies</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
 
       {selectedGroups.length > 0 && (
-        <Card className="bg-octopus-primary/10 border-octopus-primary/20">
-          <CardContent className="p-4">
-            <h3 className="font-semibold text-octopus-text mb-2">🎉 You're joining:</h3>
-            <div className="flex flex-wrap gap-2">
-              {selectedGroups.map((groupId) => {
-                const group = peerGroups.find((g) => g.id === groupId)
-                return (
-                  <Badge key={groupId} className="bg-octopus-primary text-white">
-                    {group?.icon} {group?.name}
-                  </Badge>
-                )
-              })}
-            </div>
-          </CardContent>
-        </Card>
+        <div className="bg-octopus-dark p-4 rounded-xl border border-octopus-green/20">
+          <h3 className="font-semibold text-octopus-white mb-2">🎉 You're joining:</h3>
+          <div className="flex flex-wrap gap-2">
+            {selectedGroups.map((groupId) => {
+              const group = peerGroups.find((g) => g.id === groupId)
+              return (
+                <Badge key={groupId} className="bg-octopus-green text-octopus-black">
+                  {group?.icon} {group?.name}
+                </Badge>
+              )
+            })}
+          </div>
+        </div>
       )}
 
       <div className="flex justify-between pt-4">
-        <Button variant="outline" onClick={prevStep} className="border-octopus-text text-octopus-text bg-transparent">
+        <Button 
+          variant="outline" 
+          onClick={prevStep} 
+          className="border-octopus-white/20 text-octopus-white hover:bg-octopus-white/10"
+        >
           Back
         </Button>
-        <Button onClick={handleNext} className="bg-octopus-primary hover:bg-octopus-primary/80 text-white">
-          Continue to Review
+        <Button 
+          onClick={handleNext} 
+          className="bg-octopus-pink hover:bg-octopus-pink/90 text-octopus-white font-semibold"
+        >
+          Continue
         </Button>
       </div>
     </div>

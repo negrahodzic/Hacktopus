@@ -47,6 +47,14 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Custom Octopus Energy brand variables */
+    --octopus-primary: #E50BA6;
+    --octopus-secondary: #FF6C00;
+    --octopus-accent: #00D4AA;
+    --octopus-dark: #141D2F;
+    --octopus-text-dark: #1F2937;
+    --octopus-light: #F8FAFC;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -91,4 +99,304 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Accessibility Features */
+/* High Contrast Mode using Tailwind */
+.high-contrast {
+  @apply bg-white text-black;
+}
+
+.high-contrast * {
+  @apply border-black !important;
+  box-shadow: none !important;
+}
+
+.high-contrast button {
+  @apply bg-black text-white border-black border-2 !important;
+}
+
+.high-contrast button:hover {
+  @apply bg-gray-800 !important;
+}
+
+.high-contrast button[data-variant="outline"] {
+  @apply bg-white text-black border-black border-2 !important;
+}
+
+.high-contrast button[data-variant="outline"]:hover {
+  @apply bg-gray-100 !important;
+}
+
+.high-contrast a {
+  @apply text-black underline !important;
+}
+
+.high-contrast .bg-gradient-to-r,
+.high-contrast .bg-gradient-to-br,
+.high-contrast .bg-gradient-to-l {
+  @apply bg-white text-black !important;
+}
+
+.high-contrast .text-gray-600,
+.high-contrast .text-gray-500,
+.high-contrast .text-gray-400,
+.high-contrast .text-octopus-textDark,
+.high-contrast .text-octopus-textLight,
+.high-contrast .text-octopus-primary,
+.high-contrast .text-octopus-accent {
+  @apply text-black !important;
+}
+
+.high-contrast .bg-octopus-primary,
+.high-contrast .bg-octopus-accent {
+  @apply bg-black !important;
+}
+
+.high-contrast input,
+.high-contrast textarea,
+.high-contrast select {
+  @apply bg-white text-black border-black border-2 !important;
+}
+
+.high-contrast .shadow-soft,
+.high-contrast .shadow-soft-lg,
+.high-contrast .shadow-soft-xl {
+  box-shadow: none !important;
+}
+
+/* Font Size Adjustments */
+.font-large {
+  font-size: 112.5% !important;
+}
+
+.font-large h1 { font-size: 3.15rem !important; }
+.font-large h2 { font-size: 2.7rem !important; }
+.font-large h3 { font-size: 2.25rem !important; }
+.font-large h4 { font-size: 1.8rem !important; }
+.font-large h5 { font-size: 1.35rem !important; }
+.font-large h6 { font-size: 1.125rem !important; }
+.font-large p { font-size: 1.125rem !important; }
+.font-large button { font-size: 1.125rem !important; }
+.font-large input { font-size: 1.125rem !important; }
+
+.font-xl {
+  font-size: 125% !important;
+}
+
+.font-xl h1 { font-size: 3.75rem !important; }
+.font-xl h2 { font-size: 3rem !important; }
+.font-xl h3 { font-size: 2.5rem !important; }
+.font-xl h4 { font-size: 2rem !important; }
+.font-xl h5 { font-size: 1.5rem !important; }
+.font-xl h6 { font-size: 1.25rem !important; }
+.font-xl p { font-size: 1.25rem !important; }
+.font-xl button { font-size: 1.25rem !important; }
+.font-xl input { font-size: 1.25rem !important; }
+
+/* Enhanced Focus Styles for Accessibility */
+*:focus-visible {
+  outline: 3px solid var(--octopus-primary, #E50BA6) !important;
+  outline-offset: 2px !important;
+  border-radius: 4px !important;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--octopus-primary, #E50BA6) !important;
+  outline-offset: 2px !important;
+}
+
+/* Skip Link for Screen Readers */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--octopus-primary, #E50BA6);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 10000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Custom Brand Colors for Tailwind */
+@layer utilities {
+  .text-octopus-primary {
+    color: var(--octopus-primary);
+  }
+  .bg-octopus-primary {
+    background-color: var(--octopus-primary);
+  }
+  .border-octopus-primary {
+    border-color: var(--octopus-primary);
+  }
+  .text-octopus-secondary {
+    color: var(--octopus-secondary);
+  }
+  .bg-octopus-secondary {
+    background-color: var(--octopus-secondary);
+  }
+  .text-octopus-accent {
+    color: var(--octopus-accent);
+  }
+  .bg-octopus-accent {
+    background-color: var(--octopus-accent);
+  }
+  .text-octopus-textDark {
+    color: var(--octopus-text-dark);
+  }
+  .text-octopus-heading {
+    color: var(--octopus-text-dark);
+  }
+  .bg-octopus-light {
+    background-color: var(--octopus-light);
+  }
+  .bg-octopus-dark {
+    background-color: var(--octopus-dark);
+  }
+}
+
+/* Modern Design System */
+@layer components {
+  /* Consistent rounded corners */
+  .card,
+  .btn,
+  .input,
+  .dialog,
+  .dropdown,
+  .badge,
+  .alert {
+    border-radius: 0.75rem !important; /* rounded-xl */
+  }
+  
+  /* Modern shadow system */
+  .shadow-soft {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+  
+  .shadow-soft-lg {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  .shadow-soft-xl {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Visual hierarchy */
+  .text-hero {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-heading-lg {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  
+  .text-heading-md {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  
+  .text-heading-sm {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  
+  .text-body-lg {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  
+  .text-body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  
+  .text-body-sm {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  
+  .text-caption {
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* Override default component styles */
+@layer base {
+  .rounded-xl {
+    border-radius: 0.75rem !important;
+  }
+  
+  /* Apply soft shadows to common elements */
+  [data-radix-dialog-content] {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 0.75rem !important;
+  }
+  
+  .card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+    border-radius: 0.75rem !important;
+  }
+  
+  button {
+    border-radius: 0.75rem !important;
+  }
+  
+  input, textarea, select {
+    border-radius: 0.5rem !important;
+  }
+}
+
+/* Modal and Dialog Improvements */
+[data-radix-popper-content-wrapper] {
+  z-index: 100 !important;
+}
+
+.dialog-overlay {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Improved text contrast on dark backgrounds */
+.bg-gray-900 * {
+  color: white !important;
+}
+
+.bg-gray-800 * {
+  color: white !important;
+}
+
+/* Ensure sufficient contrast for all text */
+.text-gray-600 {
+  color: #4B5563 !important;
+}
+
+.text-gray-500 {
+  color: #6B7280 !important;
+}
+
+.text-gray-400 {
+  color: #9CA3AF !important;
 }

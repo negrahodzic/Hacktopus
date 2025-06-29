@@ -6,15 +6,50 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useWizard } from "../modal-wizard"
 
 const ethnicityOptions = [
   "Black/African/Caribbean",
-  "Asian/Asian British",
+  "Asian/Asian British", 
   "Mixed/Multiple ethnic groups",
   "White",
   "Other ethnic group",
   "Prefer not to say",
+]
+
+const ukLocations = [
+  "London",
+  "Manchester",
+  "Birmingham", 
+  "Liverpool",
+  "Leeds",
+  "Sheffield",
+  "Bristol",
+  "Edinburgh",
+  "Glasgow",
+  "Newcastle",
+  "Nottingham",
+  "Cardiff",
+  "Leicester",
+  "Coventry",
+  "Belfast",
+  "Brighton",
+  "Hull",
+  "Plymouth",
+  "Stoke-on-Trent",
+  "Wolverhampton",
+  "Derby",
+  "Southampton",
+  "Portsmouth",
+  "Aberdeen",
+  "Northampton",
+  "Norwich",
+  "Dundee",
+  "Middlesbrough",
+  "Milton Keynes",
+  "Sunderland",
+  "Other/Prefer not to say"
 ]
 
 export default function Step0Welcome() {
@@ -39,93 +74,103 @@ export default function Step0Welcome() {
   const canProceed = consent
 
   return (
-    <div className="max-w-2xl mx-auto space-y-6">
+    <div className="max-w-3xl mx-auto space-y-8">
       <div className="text-center">
-        <h1 className="text-3xl font-bold text-octopus-heading mb-4">Unlock your path to a green career</h1>
-        <p className="text-lg text-octopus-textDark">
-          Let's discover your unique journey to climate leadership and sustainable careers
+        <h1 className="text-3xl font-bold text-octopus-white mb-4">Start Your <span className="text-octopus-green">Green Career</span> Journey</h1>
+        <p className="text-lg text-octopus-white/80">
+          Discover your path to climate leadership
         </p>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center space-x-2 text-octopus-textDark">
-            <span>🌱</span>
-            <span>Welcome to Your Green Career Journey</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="bg-emerald-50 p-4 rounded-lg">
-            <p className="text-sm text-emerald-800">
-              This tool will help you identify your strengths, overcome barriers, and connect with opportunities in the
-              growing green economy. Your responses will be used to create a personalized action plan with resources,
-              mentorship opportunities, and career pathways.
-            </p>
-          </div>
+      <div className="space-y-8">
+        <div className="bg-octopus-dark p-6 rounded-xl border border-octopus-green/20">
+          <p className="text-octopus-white">
+            <strong className="text-octopus-green">Quick 9-step assessment</strong> • Get personalized career plan • Connect with mentors • Access funding opportunities
+          </p>
+        </div>
 
-          {/* Consent */}
-          <div className="space-y-4">
-            <div className="flex items-start space-x-3">
+        {/* Consent */}
+        <div className="space-y-6">
+          <div className="p-6 border-2 border-octopus-pink/30 rounded-xl bg-octopus-dark">
+            <div className="flex items-start space-x-4">
               <Checkbox
                 id="consent"
                 checked={consent}
                 onCheckedChange={(checked) => setConsent(checked as boolean)}
-                className="mt-1"
+                className="mt-1 scale-125 border-octopus-white data-[state=checked]:bg-octopus-pink data-[state=checked]:border-octopus-pink"
               />
-              <Label htmlFor="consent" className="text-sm leading-relaxed text-octopus-textDark">
-                <span className="font-medium text-red-600">* Required:</span> I agree to share my answers to receive a
-                personalized green-career plan. Your data will be used to match you with relevant opportunities and will
-                not be shared with third parties without your consent.
-              </Label>
-            </div>
-          </div>
-
-          {/* Optional Demographics */}
-          <div className="space-y-4">
-            <h3 className="font-medium text-octopus-textDark">Optional Information</h3>
-            <p className="text-sm text-gray-600">
-              This information helps us provide more relevant opportunities and track our impact in supporting diverse
-              communities.
-            </p>
-
-            <div className="space-y-3">
-              <Label className="text-sm font-medium text-octopus-textDark">Ethnicity (select all that apply)</Label>
-              <div className="grid grid-cols-2 gap-3">
-                {ethnicityOptions.map((option) => (
-                  <div key={option} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={option}
-                      checked={ethnicity.includes(option)}
-                      onCheckedChange={(checked) => handleEthnicityChange(option, checked as boolean)}
-                    />
-                    <Label htmlFor={option} className="text-sm text-octopus-textDark">
-                      {option}
-                    </Label>
-                  </div>
-                ))}
+              <div>
+                <Label htmlFor="consent" className="text-octopus-white leading-relaxed cursor-pointer">
+                  <span className="font-bold text-octopus-pink">✓ Required:</span> I agree to receive my personalized career plan
+                </Label>
+                <p className="text-sm text-octopus-white/70 mt-2">
+                  Your data helps us match you with opportunities. Not shared without consent.
+                </p>
               </div>
             </div>
+          </div>
+        </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="location" className="text-sm font-medium text-octopus-textDark">
-                Location (City/Region)
-              </Label>
-              <Input
-                id="location"
-                placeholder="e.g., London, Manchester, Birmingham"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-              />
+        {/* Optional Demographics */}
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-xl font-semibold text-octopus-white mb-3">Optional Information</h3>
+            <div className="bg-octopus-dark p-4 rounded-xl border border-octopus-green/20">
+              <p className="text-sm text-octopus-white">
+                <strong className="text-octopus-green">💡 Why we ask:</strong> Helps us tailor opportunities and track diverse community impact.
+              </p>
             </div>
           </div>
 
-          <div className="flex justify-end pt-4">
-            <Button onClick={handleNext} disabled={!canProceed} className="bg-purple-600 hover:bg-purple-700">
-              Get Started
-            </Button>
+          <div className="space-y-4">
+            <Label className="text-lg font-medium text-octopus-white">Background (optional)</Label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {ethnicityOptions.map((option) => (
+                <div key={option} className="flex items-center space-x-3 p-3 border border-octopus-white/20 rounded-xl hover:border-octopus-green/50 transition-colors bg-octopus-dark">
+                  <Checkbox
+                    id={option}
+                    checked={ethnicity.includes(option)}
+                    onCheckedChange={(checked) => handleEthnicityChange(option, checked as boolean)}
+                    className="border-octopus-white data-[state=checked]:bg-octopus-green data-[state=checked]:border-octopus-green"
+                  />
+                  <Label htmlFor={option} className="text-sm text-octopus-white cursor-pointer">
+                    {option}
+                  </Label>
+                </div>
+              ))}
+            </div>
           </div>
-        </CardContent>
-      </Card>
+
+          <div className="space-y-3">
+            <Label htmlFor="location" className="text-lg font-medium text-octopus-white">
+              Location
+            </Label>
+            <Select value={location} onValueChange={setLocation}>
+              <SelectTrigger className="h-12 bg-octopus-dark border border-octopus-white/20 text-octopus-white">
+                <SelectValue placeholder="Select your city or region" />
+              </SelectTrigger>
+              <SelectContent className="bg-octopus-dark border border-octopus-white/20">
+                {ukLocations.map((city) => (
+                  <SelectItem key={city} value={city} className="text-octopus-white hover:bg-octopus-darkLight">
+                    {city}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+
+        <div className="flex justify-end pt-6">
+          <Button 
+            onClick={handleNext} 
+            disabled={!canProceed} 
+            size="lg"
+            className="bg-octopus-pink hover:bg-octopus-pink/90 text-octopus-white font-semibold px-8 py-3"
+          >
+            Start Journey 🚀
+          </Button>
+        </div>
+      </div>
     </div>
   )
 }
