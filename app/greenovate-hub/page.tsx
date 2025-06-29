@@ -120,7 +120,7 @@ export default function AccessOSPage() {
   }
 
   return (
-    <div className="min-h-screen bg-octopus-white text-octopus-black">
+    <div className="min-h-screen bg-octopus-white text-octopus-black overflow-x-hidden">
       {/* Skip Link for Screen Readers */}
       <a href="#main-content" className="skip-link">
         Skip to main content
@@ -152,6 +152,17 @@ export default function AccessOSPage() {
                 Support
               </a>
             </nav>
+            
+            {/* Mobile menu indicator */}
+            <div className="md:hidden">
+              <Button
+                size="sm"
+                className="bg-octopus-pink hover:bg-octopus-pink/90 text-octopus-white font-semibold"
+                onClick={() => setIsModalOpen(true)}
+              >
+                Get Started
+              </Button>
+            </div>
           </div>
         </div>
       </header>
@@ -160,7 +171,7 @@ export default function AccessOSPage() {
       <section id="main-content" className="bg-octopus-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h1 className="text-5xl font-bold text-octopus-dark mb-8">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-octopus-dark mb-8 leading-tight">
             Reimagining access to<br></br> <span className="text-octopus-green">Green Careers</span> & <span className="text-octopus-green">Climate Leadership</span>
           </h1>
           <div className="mx-auto max-w-3xl text-center mb-12">
@@ -185,14 +196,14 @@ export default function AccessOSPage() {
       {/* Problem Statement */}
       <section id="story-problem" className="py-16 bg-octopus-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-octopus-white text-center mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-octopus-white text-center mb-4">
             What's Standing Between You and a Green Career?
           </h2>
           <p className="text-lg text-octopus-white max-w-3xl mx-auto mb-8 text-center">
             Systemic barriers have left huge talent pools untapped - just when we need every voice to tackle climate change. Here's what that looks like in three snapshots:
           </p>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <div className="text-center p-8 bg-octopus-darkLight rounded-xl border border-octopus-dark">
               <div className="w-20 h-20 bg-octopus-pink rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-4xl">👥</span>
@@ -230,7 +241,7 @@ export default function AccessOSPage() {
       <section className="py-20 bg-octopus-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-octopus-dark mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-dark mb-4">
               Who's Locked Out of Green Careers?
             </h2>
             <p className="text-lg text-octopus-black max-w-3xl mx-auto mb-12">
@@ -238,7 +249,7 @@ export default function AccessOSPage() {
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-8 space-y-8 lg:space-y-0 items-start">
+          <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 space-y-6 lg:space-y-0 items-start">
             {/* Aisha - Supporting Persona */}
             <div>
               <div className="bg-octopus-darkLight p-8 rounded-xl border border-octopus-dark">
@@ -370,10 +381,11 @@ export default function AccessOSPage() {
             <div className="mt-8">
               <Button
                 size="lg"
-                className="bg-octopus-primary hover:bg-octopus-darkLight text-octopus-white font-semibold px-8"
+                className="bg-octopus-primary hover:bg-octopus-darkLight text-octopus-white font-semibold px-4 sm:px-8"
                 onClick={() => setIsModalOpen(true)}
               >
-                Ready to break these barriers? Start your Access Journey
+                <span className="hidden sm:inline">Ready to break these barriers? Start your Access Journey</span>
+                <span className="sm:hidden">Start Your Access Journey</span>
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
@@ -385,7 +397,7 @@ export default function AccessOSPage() {
       <section className="py-16 bg-octopus-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-octopus-white mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-white mb-4">
               How Greenovate Hub Unlocks Access
             </h2>
             <p className="text-lg text-octopus-white max-w-3xl mx-auto mb-8">
@@ -393,7 +405,7 @@ export default function AccessOSPage() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-octopus-primary rounded-lg flex items-center justify-center flex-shrink-0">
@@ -453,7 +465,7 @@ export default function AccessOSPage() {
       <section className="bg-octopus-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-octopus-dark mb-4">Access Pyramid: Your Pathway to <span className="text-octopus-green">Green</span> Careers</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-dark mb-4">Access Pyramid: Your Pathway to <span className="text-octopus-green">Green</span> Careers</h2>
             <p className="text-lg text-octopus-black max-w-3xl mx-auto mb-6">
               Discover your access level and plan your ascent through the green-careers pyramid. Every role in the green economy builds on these four foundational tiers.
             </p>
@@ -464,7 +476,7 @@ export default function AccessOSPage() {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div title="Click on each tier to learn more">
               <Pyramid size="lg" />
             </div>
@@ -508,7 +520,7 @@ export default function AccessOSPage() {
       <section className="bg-octopus-dark py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-octopus-white mb-6">Explore <span className="text-octopus-green">Green</span> Careers</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-white mb-6">Explore <span className="text-octopus-green">Green</span> Careers</h2>
             <p className="text-lg text-octopus-white">Discover what's possible in the growing green economy</p>
           </div>
 
@@ -520,7 +532,7 @@ export default function AccessOSPage() {
       <section className="bg-octopus-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-octopus-dark mb-4">What Our Tools Actually Do</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-dark mb-4">What Our Tools Actually Do</h2>
             <p className="text-lg text-octopus-black">Four simple steps to your green career</p>
           </div>
 
@@ -596,8 +608,8 @@ export default function AccessOSPage() {
       {/* CTA Section */}
       <section className="bg-octopus-dark py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-octopus-darkLight rounded-2xl p-12 text-center">
-            <h2 className="text-3xl font-bold text-octopus-white text-center mb-4">
+          <div className="bg-octopus-darkLight rounded-2xl p-6 sm:p-8 lg:p-12 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-white text-center mb-4">
               Where Do You Go Next?
             </h2>
             <p className="text-lg text-octopus-white max-w-2xl mx-auto mb-8">
@@ -606,10 +618,11 @@ export default function AccessOSPage() {
             <div className="text-center mx-auto max-w-md">
               <Button
                 size="lg"
-                className="bg-octopus-primary hover:bg-octopus-darkLight text-octopus-white font-semibold mb-6"
+                className="bg-octopus-primary hover:bg-octopus-darkLight text-octopus-white font-semibold mb-6 px-4 sm:px-8"
                 onClick={() => setIsModalOpen(true)}
               >
-                Begin My Assessment
+                <span className="hidden sm:inline">Begin My Assessment</span>
+                <span className="sm:hidden">Start Assessment</span>
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
@@ -629,7 +642,7 @@ export default function AccessOSPage() {
       <section className="bg-octopus-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-octopus-dark mb-4">Help Shape Access for Diverse Communities</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-dark mb-4">Help Shape Access for Diverse Communities</h2>
             <p className="text-lg text-octopus-black max-w-3xl mx-auto mb-6">
               Your ideas unlock better access to education, funding & mentorship. 
               Share what's missing, what's working, and what could work better.
@@ -648,18 +661,20 @@ export default function AccessOSPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button
                 size="lg"
-                className="bg-octopus-pink hover:bg-octopus-pink/90 text-octopus-white font-semibold px-8"
+                className="bg-octopus-pink hover:bg-octopus-pink/90 text-octopus-white font-semibold px-4 sm:px-8"
                 onClick={() => setIsFeedbackModalOpen(true)}
               >
-                Share Your Idea
+                <span className="hidden sm:inline">Share Your Idea</span>
+                <span className="sm:hidden">Share Idea</span>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-octopus-dark text-octopus-dark bg-transparent hover:bg-octopus-pink hover:border-octopus-pink hover:text-octopus-white font-semibold px-8"
+                className="border-2 border-octopus-dark text-octopus-dark bg-transparent hover:bg-octopus-pink hover:border-octopus-pink hover:text-octopus-white font-semibold px-4 sm:px-8"
                 onClick={() => setIsCommunityModalOpen(true)}
               >
-                View Community Suggestions
+                <span className="hidden sm:inline">View Community Suggestions</span>
+                <span className="sm:hidden">View Suggestions</span>
               </Button>
             </div>
             
@@ -674,13 +689,13 @@ export default function AccessOSPage() {
       <section className="bg-octopus-dark py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-octopus-white mb-4">Real Impact, Real Results</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-white mb-4">Real Impact, Real Results</h2>
             <p className="text-lg text-octopus-white max-w-3xl mx-auto">
               Join thousands who've used our platform to break into green careers and create positive change.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <div className="bg-octopus-white p-6 rounded-xl border border-octopus-darkLight">
               <div className="w-12 h-12 bg-octopus-pink rounded-full flex items-center justify-center text-octopus-white font-semibold mb-4 mx-auto">
                 A
@@ -735,13 +750,13 @@ export default function AccessOSPage() {
       <section className="bg-octopus-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-octopus-dark mb-6">Our Partners</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-dark mb-6">Our Partners</h2>
             <p className="text-lg text-octopus-black max-w-2xl mx-auto">
               Working together to expand access to green careers through mentorship and community
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
             <div className="text-center p-8 bg-octopus-dark rounded-xl border border-octopus-darkLight">
               <div className="w-20 h-20 bg-octopus-pink rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl font-bold text-octopus-white">R</span>
@@ -784,7 +799,7 @@ export default function AccessOSPage() {
       {/* Footer */}
       <footer className="bg-octopus-dark text-octopus-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <img 
@@ -911,7 +926,7 @@ export default function AccessOSPage() {
       {/* Submit Ideas Modal */}
       {isFeedbackModalOpen && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-octopus-dark rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-octopus-darkLight">
+          <div className="bg-octopus-dark rounded-2xl p-4 sm:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-octopus-darkLight">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold text-octopus-white">Submit Your Ideas</h2>
               <Button
@@ -1003,7 +1018,7 @@ export default function AccessOSPage() {
       {/* Community Ideas Modal */}
       {isCommunityModalOpen && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-octopus-dark rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-octopus-darkLight">
+          <div className="bg-octopus-dark rounded-2xl p-4 sm:p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-octopus-darkLight">
             <div className="flex justify-between items-center mb-6">
               <div>
                 <h2 className="text-2xl font-bold text-octopus-white">Community Ideas & Suggestions</h2>
