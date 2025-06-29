@@ -114,7 +114,7 @@ export default function AccessOSPage() {
     setNewTitle("")
     setNewDescription("")
     setIsSubmitting(false)
-    
+
     // Show success message or close modal
     alert('Thank you! Your idea has been submitted successfully.')
   }
@@ -125,15 +125,15 @@ export default function AccessOSPage() {
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
-      
+
       {/* Header */}
       <header className="bg-octopus-dark shadow-sm border-b border-octopus-darkLight">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-                        <div className="flex items-center space-x-2">
-              <img 
-                src="/logo-octopus-energy.png" 
-                alt="Octopus Energy" 
+            <div className="flex items-center space-x-2">
+              <img
+                src="/logo-octopus-energy.png"
+                alt="Octopus Energy"
                 className="h-8 w-auto"
               />
               <span className="text-xl font-bold text-octopus-white">Octopus Energy</span>
@@ -152,7 +152,7 @@ export default function AccessOSPage() {
                 Support
               </a>
             </nav>
-            
+
             {/* Mobile menu indicator */}
             <div className="md:hidden">
               <Button
@@ -168,28 +168,22 @@ export default function AccessOSPage() {
       </header>
 
       {/* Hero Section */}
-      <section id="main-content" className="bg-octopus-white py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-octopus-dark mb-8 leading-tight">
-            Reimagining access to<br></br> <span className="text-octopus-green">Green Careers</span> & <span className="text-octopus-green">Climate Leadership</span>
-          </h1>
-          <div className="mx-auto max-w-3xl text-center mb-12">
-            <p className="text-lg text-octopus-black mb-4">
-              Imagine a world where every passionate changemaker - no matter their background - can launch a green career.
-            </p>
-            <p className="text-lg text-octopus-black">
-              Greenovate Hub breaks down the barriers that have kept under-represented communities on the sidelines of sustainability and energy.
-            </p>
-          </div>
-          <div className="mb-2">
+      <section id="main-content" className="bg-octopus-white pt-16 pb-24">
+        <div className="mb-12">
           <img
             src="/team-octopus-energy.png"
             alt="Diverse group of young professionals at Octopus Energy"
-            className="mx-auto rounded-full shadow-soft-xl max-w-[200px] w-full h-auto"
+            className="mx-auto rounded-full shadow-soft-xl max-w-[250px] w-full h-auto"
           />
-          </div>
         </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-octopus-dark mb-8 leading-tight">
+              Reimagining access to<br></br> <span className="text-octopus-green">Green Careers</span> & <span className="text-octopus-green">Climate Leadership</span> <br></br>for underrepresented voices
+            </h1>
+
+
+          </div>
         </div>
       </section>
 
@@ -197,38 +191,38 @@ export default function AccessOSPage() {
       <section id="story-problem" className="py-16 bg-octopus-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-octopus-white text-center mb-4">
-            What's Standing Between You and a Green Career?
+            What's standing between <span className="text-octopus-green">you</span> and a <span className="text-octopus-green">Green Career</span>?
           </h2>
           <p className="text-lg text-octopus-white max-w-3xl mx-auto mb-8 text-center">
             Systemic barriers have left huge talent pools untapped - just when we need every voice to tackle climate change. Here's what that looks like in three snapshots:
           </p>
-          
+
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            <div className="text-center p-8 bg-octopus-darkLight rounded-xl border border-octopus-dark">
+            <div className="text-center p-8 bg-octopus-darkLight rounded-xl border border-octopus-dark shadow-2xl shadow-white drop-shadow-2xl">
               <div className="w-20 h-20 bg-octopus-pink rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-4xl">👥</span>
               </div>
-              <h3 className="text-xl font-semibold text-octopus-white mb-4">Barrier: Under-representation</h3>
+              <h3 className="text-xl font-semibold text-octopus-white mb-4">Under-representation</h3>
               <p className="text-octopus-white/80">
                 Only <strong className="text-octopus-pink">5–7%</strong> of clean-energy workers are from ethnic-minority backgrounds, despite these communities being disproportionately affected by climate change.
               </p>
             </div>
-            
-            <div className="text-center p-8 bg-octopus-darkLight rounded-xl border border-octopus-dark">
+
+            <div className="text-center p-8 bg-octopus-darkLight rounded-xl border border-octopus-dark shadow-2xl shadow-white drop-shadow-2xl">
               <div className="w-20 h-20 bg-octopus-green rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-4xl">🎓</span>
               </div>
-              <h3 className="text-xl font-semibold text-octopus-white mb-4">Barrier: Lack of education & guidance</h3>
+              <h3 className="text-xl font-semibold text-octopus-white mb-4">Lack of education & guidance</h3>
               <p className="text-octopus-white/80">
                 <strong className="text-octopus-green">70%</strong> of young people have never received green-career guidance, leaving them unaware of opportunities in sustainability and energy sectors.
               </p>
             </div>
-            
-            <div className="text-center p-8 bg-octopus-darkLight rounded-xl border border-octopus-dark">
+
+            <div className="text-center p-8 bg-octopus-darkLight rounded-xl border border-octopus-dark shadow-2xl shadow-white drop-shadow-2xl">
               <div className="w-20 h-20 bg-octopus-dark rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-4xl">⚡</span>
               </div>
-              <h3 className="text-xl font-semibold text-octopus-white mb-4">Barrier: Limited career pathways</h3>
+              <h3 className="text-xl font-semibold text-octopus-white mb-4">Limited career pathways</h3>
               <p className="text-octopus-white/80">
                 Demand for green talent must <strong className="text-octopus-primary">double by 2050</strong> to meet net-zero goals - we can't afford to exclude anyone.
               </p>
@@ -242,22 +236,22 @@ export default function AccessOSPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl font-bold text-octopus-dark mb-4">
-              Who's Locked Out of Green Careers?
+              Who's locked out of <span className="text-octopus-green">Green Careers</span>?
             </h2>
             <p className="text-lg text-octopus-black max-w-3xl mx-auto mb-12">
               Meet the real people whose struggles inspired Greenovate Hub's four-pillar solution.
             </p>
           </div>
-          
+
           <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 space-y-6 lg:space-y-0 items-start">
             {/* Aisha - Supporting Persona */}
             <div>
               <div className="bg-octopus-darkLight p-8 rounded-xl border border-octopus-dark">
                 <div className="text-center mb-6">
                   <div className="w-24 h-24 mx-auto mb-4">
-                    <img 
-                      src="/aisha.png" 
-                      alt="Aisha Rahman" 
+                    <img
+                      src="/aisha.png"
+                      alt="Aisha Rahman"
                       className="w-24 h-24 rounded-full object-cover border-2 border-octopus-pink"
                     />
                   </div>
@@ -297,16 +291,16 @@ export default function AccessOSPage() {
                 </div>
                 <div className="text-center mb-6">
                   <div className="w-24 h-24 mx-auto mb-4">
-                    <img 
-                      src="/jamal.png" 
-                      alt="Jamal Patel" 
+                    <img
+                      src="/jamal.png"
+                      alt="Jamal Patel"
                       className="w-24 h-24 rounded-full object-cover border-2 border-octopus-green"
                     />
                   </div>
                   <h3 className="text-2xl font-bold text-octopus-white mb-2">Jamal Patel</h3>
                   <p className="text-octopus-white/80">23, First-gen Environmental Science Graduate</p>
                 </div>
-                
+
                 <div className="space-y-6">
                   <div className="bg-octopus-darkLight p-4 rounded-lg">
                     <span className="text-octopus-green font-semibold text-sm">🎯 Goals:</span>
@@ -315,7 +309,7 @@ export default function AccessOSPage() {
                       <li>• Grow a professional network</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-octopus-darkLight p-4 rounded-lg">
                     <span className="text-octopus-pink/90 font-semibold text-sm">🚧 Barriers:</span>
                     <ul className="text-octopus-white/90 text-sm mt-2 space-y-1">
@@ -324,7 +318,7 @@ export default function AccessOSPage() {
                       <li>• Financial & decision-making constraints</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-octopus-green/10 p-4 rounded-lg border border-octopus-green/50">
                     <span className="text-octopus-green font-medium text-xs">Access:</span>
                     <p className="text-octopus-white/90 text-xs mt-1">
@@ -340,9 +334,9 @@ export default function AccessOSPage() {
               <div className="bg-octopus-darkLight p-8 rounded-xl border border-octopus-dark">
                 <div className="text-center mb-6">
                   <div className="w-24 h-24 mx-auto mb-4">
-                    <img 
-                      src="/rohan.png" 
-                      alt="Rohan Singh" 
+                    <img
+                      src="/rohan.png"
+                      alt="Rohan Singh"
                       className="w-24 h-24 rounded-full object-cover border-2 border-octopus-accent"
                     />
                   </div>
@@ -372,10 +366,10 @@ export default function AccessOSPage() {
               </div>
             </div>
           </div>
-          
+
           <div className="text-center mt-12">
             <p className="text-octopus-black/70 text-sm max-w-2xl mx-auto mb-6">
-              Our platform addresses the unique challenges faced by each persona through tailored assessments, 
+              Our platform addresses the unique challenges faced by each persona through tailored assessments,
               flexible learning paths, and barrier-specific support resources.
             </p>
             <div className="mt-8">
@@ -398,13 +392,13 @@ export default function AccessOSPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-octopus-white mb-4">
-              How Greenovate Hub Unlocks Access
+              How <span className="text-octopus-green">Greenovate Hub</span> unlocks access?
             </h2>
             <p className="text-lg text-octopus-white max-w-3xl mx-auto mb-8">
               Four pillars - assessment, pathways, mentorship, funding - work together to break down each barrier you saw above.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
@@ -418,7 +412,7 @@ export default function AccessOSPage() {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-octopus-green rounded-lg flex items-center justify-center flex-shrink-0">
                   <Users className="w-6 h-6 text-octopus-black" />
@@ -431,7 +425,7 @@ export default function AccessOSPage() {
                 </div>
               </div>
             </div>
-            
+
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-octopus-accent rounded-lg flex items-center justify-center flex-shrink-0">
@@ -444,7 +438,7 @@ export default function AccessOSPage() {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-octopus-pink rounded-lg flex items-center justify-center flex-shrink-0">
                   <span className="text-octopus-white text-lg font-bold">£</span>
@@ -476,41 +470,9 @@ export default function AccessOSPage() {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="flex justify-center">
             <div title="Click on each tier to learn more">
               <Pyramid size="lg" />
-            </div>
-            
-                          <div className="space-y-6">
-              <div className="p-6 bg-octopus-white rounded-xl">
-                <h3 className="text-xl font-semibold text-octopus-black mb-3">Why the Pyramid Matters</h3>
-                <div className="space-y-3 text-sm text-octopus-black">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-octopus-green rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-octopus-black text-xs font-bold">1</span>
-                    </div>
-                    <div>
-                      <strong>Clear Progression:</strong> Shows exactly what skills to develop next for your green career goals
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-octopus-green rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-octopus-black text-xs font-bold">2</span>
-                    </div>
-                    <div>
-                      <strong>Realistic Expectations:</strong> Understand where you are now and what's achievable in your timeframe
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-octopus-green rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-octopus-black text-xs font-bold">3</span>
-                    </div>
-                    <div>
-                      <strong>Targeted Learning:</strong> Focus your energy on the most impactful skills for your current level
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -528,23 +490,22 @@ export default function AccessOSPage() {
         </div>
       </section>
 
-            {/* How Our Tools Work */}
+      {/* How Our Tools Work */}
       <section className="bg-octopus-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-dark mb-4">What Our Tools Actually Do</h2>
-            <p className="text-lg text-octopus-black">Four simple steps to your green career</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-dark mb-4">What <span className="text-octopus-green">our tools</span> actually do?</h2>
           </div>
 
           <div className="max-w-3xl mx-auto">
             <div className="space-y-6">
               {/* Step 1 */}
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-octopus-primary rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-octopus-green rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-octopus-white font-bold text-lg">1</span>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-octopus-dark mb-2">Access Your Skills & Background</h3>
+                  <h3 className="text-xl font-semibold text-octopus-dark mb-2">Assess your skills & background</h3>
                   <p className="text-octopus-black">
                     Take our 10-minute assessment to map your existing strengths across 8 core competencies and identify where you fit in the Green Skills Pyramid. Links to education pillar.
                   </p>
@@ -553,11 +514,11 @@ export default function AccessOSPage() {
 
               {/* Step 2 */}
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-octopus-accent rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-octopus-green rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-octopus-white font-bold text-lg">2</span>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-octopus-dark mb-2">Access Tailored Solutions</h3>
+                  <h3 className="text-xl font-semibold text-octopus-dark mb-2">Receive tailored solutions</h3>
                   <p className="text-octopus-black">
                     We detect specific challenges you might face (cost, time, confidence, childcare) and provide targeted pathways and funding solutions. Links to funding pillar.
                   </p>
@@ -567,10 +528,10 @@ export default function AccessOSPage() {
               {/* Step 3 */}
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-octopus-green rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-octopus-black font-bold text-lg">3</span>
+                  <span className="text-octopus-white font-bold text-lg">3</span>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-octopus-dark mb-2">Access Mentorship</h3>
+                  <h3 className="text-xl font-semibold text-octopus-dark mb-2">Access mentorships</h3>
                   <p className="text-octopus-black">
                     Get matched with professionals who share similar backgrounds and have walked your path. Real people who understand your journey. Links to mentorship pillar.
                   </p>
@@ -579,11 +540,11 @@ export default function AccessOSPage() {
 
               {/* Step 4 */}
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-octopus-pink rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-octopus-green rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-octopus-white font-bold text-lg">4</span>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-octopus-dark mb-2">Access Your Action Plan</h3>
+                  <h3 className="text-xl font-semibold text-octopus-dark mb-2">Get personlised sction plan</h3>
                   <p className="text-octopus-black">
                     Receive a step-by-step roadmap with specific courses, funding opportunities, and connections tailored to your goals. Links to pathways pillar.
                   </p>
@@ -609,12 +570,10 @@ export default function AccessOSPage() {
       <section className="bg-octopus-dark py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-octopus-darkLight rounded-2xl p-6 sm:p-8 lg:p-12 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-white text-center mb-4">
-              Where Do You Go Next?
+            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-white text-center mb-12">
+              Where do you go <span className="text-octopus-green">next</span>?
             </h2>
-            <p className="text-lg text-octopus-white max-w-2xl mx-auto mb-8">
-              Take just 10 minutes to start your assessment - then watch the doors to green careers swing wide open.
-            </p>
+
             <div className="text-center mx-auto max-w-md">
               <Button
                 size="lg"
@@ -642,22 +601,22 @@ export default function AccessOSPage() {
       <section className="bg-octopus-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-dark mb-4">Help Shape Access for Diverse Communities</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-dark mb-4">Help shape <span className="text-octopus-green">access</span> for diverse communities</h2>
             <p className="text-lg text-octopus-black max-w-3xl mx-auto mb-6">
-              Your ideas unlock better access to education, funding & mentorship. 
+              Your ideas unlock better access to education, funding & mentorship.
               Share what's missing, what's working, and what could work better.
             </p>
-            
+
             <div className="bg-octopus-dark p-6 rounded-lg max-w-3xl mx-auto mb-8">
               <h3 className="font-semibold text-octopus-white mb-3">🌍 Why Your Voice Matters</h3>
               <p className="text-sm text-octopus-white leading-relaxed">
-                This platform was built <strong>for</strong> underrepresented communities, not just <strong>about</strong> them. 
-                We need your insights to ensure we're addressing real barriers, not assumed ones. 
-                Every suggestion helps us better serve people who look like you, face similar challenges, 
+                This platform was built <strong>for</strong> underrepresented communities, not just <strong>about</strong> them.
+                We need your insights to ensure we're addressing real barriers, not assumed ones.
+                Every suggestion helps us better serve people who look like you, face similar challenges,
                 or come from similar backgrounds.
               </p>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button
                 size="lg"
@@ -677,7 +636,7 @@ export default function AccessOSPage() {
                 <span className="sm:hidden">View Suggestions</span>
               </Button>
             </div>
-            
+
             <div className="mt-6 text-sm text-octopus-black">
               💚 Together we're building the most inclusive green careers platform in the world
             </div>
@@ -689,12 +648,12 @@ export default function AccessOSPage() {
       <section className="bg-octopus-dark py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-white mb-4">Real Impact, Real Results</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-white mb-4">Real <span className="text-octopus-green">impact</span>, real <span className="text-octopus-green">results</span></h2>
             <p className="text-lg text-octopus-white max-w-3xl mx-auto">
               Join thousands who've used our platform to break into green careers and create positive change.
             </p>
           </div>
-          
+
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <div className="bg-octopus-white p-6 rounded-xl border border-octopus-darkLight">
               <div className="w-12 h-12 bg-octopus-pink rounded-full flex items-center justify-center text-octopus-white font-semibold mb-4 mx-auto">
@@ -705,7 +664,7 @@ export default function AccessOSPage() {
               </blockquote>
               <cite className="text-octopus-black font-medium text-xs text-center block">Amara, London</cite>
             </div>
-            
+
             <div className="bg-octopus-white p-6 rounded-xl border border-octopus-darkLight">
               <div className="w-12 h-12 bg-octopus-green rounded-full flex items-center justify-center text-octopus-black font-semibold mb-4 mx-auto">
                 M
@@ -715,7 +674,7 @@ export default function AccessOSPage() {
               </blockquote>
               <cite className="text-octopus-black font-medium text-xs text-center block">Mehreen, Birmingham</cite>
             </div>
-            
+
             <div className="bg-octopus-white p-6 rounded-xl border border-octopus-darkLight">
               <div className="w-12 h-12 bg-octopus-dark rounded-full flex items-center justify-center text-octopus-white font-semibold mb-4 mx-auto">
                 J
@@ -725,7 +684,7 @@ export default function AccessOSPage() {
               </blockquote>
               <cite className="text-octopus-black font-medium text-xs text-center block">Jamal, Manchester</cite>
             </div>
-            
+
             <div className="bg-octopus-white p-6 rounded-xl border border-octopus-darkLight">
               <div className="w-12 h-12 bg-octopus-darkLight rounded-full flex items-center justify-center text-octopus-white font-semibold mb-4 mx-auto">
                 P
@@ -736,7 +695,7 @@ export default function AccessOSPage() {
               <cite className="text-octopus-black font-medium text-xs text-center block">Priya, Leeds</cite>
             </div>
           </div>
-          
+
           <div className="text-center text-lg my-12">
             <p className="text-octopus-white max-w-3xl mx-auto">
               Thousands of under-represented changemakers have already used Greenovate Hub to land internships, launch startups, and secure full-time roles. You could be next.
@@ -750,12 +709,12 @@ export default function AccessOSPage() {
       <section className="bg-octopus-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-dark mb-6">Our Partners</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-octopus-dark mb-6">Our <span className="text-octopus-green">partners</span></h2>
             <p className="text-lg text-octopus-black max-w-2xl mx-auto">
               Working together to expand access to green careers through mentorship and community
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
             <div className="text-center p-8 bg-octopus-dark rounded-xl border border-octopus-darkLight">
               <div className="w-20 h-20 bg-octopus-pink rounded-full flex items-center justify-center mx-auto mb-6">
@@ -770,7 +729,7 @@ export default function AccessOSPage() {
                 <Badge className="bg-octopus-pink text-octopus-white font-medium">Mentorship Partner</Badge>
               </div>
             </div>
-            
+
             <div className="text-center p-8 bg-octopus-dark rounded-xl border border-octopus-darkLight">
               <div className="w-20 h-20 bg-octopus-green rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl font-bold text-octopus-black">B</span>
@@ -785,7 +744,7 @@ export default function AccessOSPage() {
               </div>
             </div>
           </div>
-          
+
           <div className="text-center mt-12">
             <p className="text-sm text-octopus-black">
               Interested in partnering with us? <a href="#" className="text-octopus-pink underline hover:text-octopus-green">Get in touch</a>
@@ -802,9 +761,9 @@ export default function AccessOSPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <img 
-                  src="/logo-octopus-energy.png" 
-                  alt="Octopus Energy" 
+                <img
+                  src="/logo-octopus-energy.png"
+                  alt="Octopus Energy"
                   className="h-8 w-auto"
                 />
                 <span className="text-xl font-bold text-octopus-white">Octopus Energy</span>
@@ -938,11 +897,11 @@ export default function AccessOSPage() {
                 ✕
               </Button>
             </div>
-            
+
             <div className="bg-octopus-darkLight p-6 rounded-lg mb-6">
               <h3 className="font-semibold text-octopus-white mb-3">💡 Help Us Build Better Tools</h3>
               <p className="text-sm text-octopus-white/80 mb-4">
-                Your insights help us create tools that truly serve underrepresented communities. 
+                Your insights help us create tools that truly serve underrepresented communities.
                 We want to hear about:
               </p>
               <ul className="text-sm text-octopus-white/80 space-y-2">
@@ -991,7 +950,7 @@ export default function AccessOSPage() {
                 </Button>
               </div>
             </div>
-            
+
             <div className="mt-6 flex justify-center space-x-4">
               <Button
                 variant="outline"
@@ -1039,10 +998,10 @@ export default function AccessOSPage() {
               <Button
                 variant={activeTab === 'all' ? 'default' : 'ghost'}
                 size="sm"
-                className={`flex-1 ${activeTab === 'all' 
-                  ? 'bg-octopus-white text-octopus-dark' 
+                className={`flex-1 ${activeTab === 'all'
+                  ? 'bg-octopus-white text-octopus-dark'
                   : 'text-octopus-white hover:bg-octopus-white/10'
-                }`}
+                  }`}
                 onClick={() => setActiveTab('all')}
               >
                 All Ideas
@@ -1050,10 +1009,10 @@ export default function AccessOSPage() {
               <Button
                 variant={activeTab === 'inprogress' ? 'default' : 'ghost'}
                 size="sm"
-                className={`flex-1 ${activeTab === 'inprogress' 
-                  ? 'bg-octopus-accent text-octopus-white' 
+                className={`flex-1 ${activeTab === 'inprogress'
+                  ? 'bg-octopus-accent text-octopus-white'
                   : 'text-octopus-white hover:bg-octopus-white/10'
-                }`}
+                  }`}
                 onClick={() => setActiveTab('inprogress')}
               >
                 In Progress
@@ -1061,10 +1020,10 @@ export default function AccessOSPage() {
               <Button
                 variant={activeTab === 'approved' ? 'default' : 'ghost'}
                 size="sm"
-                className={`flex-1 ${activeTab === 'approved' 
-                  ? 'bg-octopus-green text-octopus-black' 
+                className={`flex-1 ${activeTab === 'approved'
+                  ? 'bg-octopus-green text-octopus-black'
                   : 'text-octopus-white hover:bg-octopus-white/10'
-                }`}
+                  }`}
                 onClick={() => setActiveTab('approved')}
               >
                 Approved
@@ -1072,16 +1031,16 @@ export default function AccessOSPage() {
               <Button
                 variant={activeTab === 'rejected' ? 'default' : 'ghost'}
                 size="sm"
-                className={`flex-1 ${activeTab === 'rejected' 
-                  ? 'bg-octopus-pink text-octopus-white' 
+                className={`flex-1 ${activeTab === 'rejected'
+                  ? 'bg-octopus-pink text-octopus-white'
                   : 'text-octopus-white hover:bg-octopus-white/10'
-                }`}
+                  }`}
                 onClick={() => setActiveTab('rejected')}
               >
                 Rejected
               </Button>
             </div>
-            
+
             <div className="space-y-4">
               {/* All Ideas - Show all */}
               {activeTab === 'all' && (
@@ -1516,7 +1475,7 @@ export default function AccessOSPage() {
                     </div>
                   </div>
                 </>
-                             )}
+              )}
             </div>
 
             <div className="mt-8 flex justify-center space-x-4">
