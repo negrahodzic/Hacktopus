@@ -28,8 +28,8 @@ export default function Step5Networks() {
   return (
     <div className="max-w-3xl mx-auto space-y-6">
       <div className="text-center">
-        <h1 className="text-3xl font-bold text-octopus-heading mb-4">Networks & Support</h1>
-        <p className="text-lg text-octopus-textDark">Building connections is key to green career success</p>
+        <h1 className="text-3xl font-bold text-octopus-white mb-4">Networks & Support</h1>
+        <p className="text-lg text-octopus-white">Building connections is key to green career success</p>
       </div>
 
       {/* Mentorship */}
